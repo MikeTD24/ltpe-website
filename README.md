@@ -236,6 +236,6 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 **Dernière mise à jour** : 30 Mars 2024
 
-**Auteur** : Manus AI Assistant
+**Auteur** : Manus AI Assistant & Mike TOBY
 
 **Pour les développeurs** : N'hésitez pas à forker ce projet et à contribuer !
