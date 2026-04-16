@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enseignements - Le Temple du Plein Évangile">
+    <title>Enseignements - Le Temple du Plein Évangile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-text">L.TPÉ<br><span style="font-size: 0.7rem;">LE TEMPLE DU PLEIN ÉVANGILE</span></div>
+            </div>
+            <nav>
+                <a href="index.html">Accueil</a>
+                <a href="about.html">Qui Sommes-Nous</a>
+                <a href="#cultes">Cultes & Événements</a>
+                <a href="teachings.html" class="active">Enseignements</a>
+                <a href="#ministeres">Ministères</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <a href="#donate" class="donate-btn">DONNER</a>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/@ltpevangile" target="_blank">📺</a>
+                    <a href="https://www.facebook.com/ltpevangile" target="_blank">f</a>
+                    <a href="https://www.instagram.com/ltpevangile" target="_blank">📷</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>Enseignements</h1>
+        <p>Découvrez nos prédications et enseignements bibliques</p>
+    </section>
+
+    <!-- LATEST TEACHING SECTION -->
+    <section class="light-bg">
+        <div class="container">
+            <h2>Dernier Enseignement</h2>
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-top: 2rem; align-items: center;">
+                <div style="position: relative; width: 100%; padding-bottom: 56.25%; background-color: #000; border-radius: 10px; overflow: hidden;">
+                    <iframe id="latest-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" src="" allowfullscreen></iframe>
+                </div>
+                <div id="latest-info">
+                    <h3 id="latest-title">Titre du dernier enseignement</h3>
+                    <p id="latest-description">Description du dernier enseignement...</p>
+                    <p style="color: var(--primary-gold); font-weight: 600;" id="latest-date">Date</p>
+                    <a href="https://www.youtube.com/@ltpevangile" target="_blank" class="btn-primary">Voir sur YouTube</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTER SECTION -->
+    <section>
+        <div class="container">
+            <h2>Tous les Enseignements</h2>
+            <div style="display: flex; gap: 1rem; margin: 2rem 0; flex-wrap: wrap;">
+                <input type="text" id="search-input" placeholder="Rechercher un enseignement..." style="padding: 0.75rem; border: 1px solid var(--border-light); border-radius: 5px; flex: 1; min-width: 200px;">
+                <select id="filter-select" style="padding: 0.75rem; border: 1px solid var(--border-light); border-radius: 5px;">
+                    <option value="">Tous les enseignements</option>
+                    <option value="culte">Culte</option>
+                    <option value="etude">Étude Biblique</option>
+                    <option value="priere">Prière</option>
+                </select>
+            </div>
+
+            <!-- SERMONS GRID -->
+            <div class="sermons-grid" id="teachings-container">
+                <!-- Les vidéos YouTube seront chargées ici via JavaScript -->
+            </div>
+
+            <!-- PAGINATION -->
+            <div style="text-align: center; margin-top: 3rem;">
+                <button id="load-more-btn" class="btn-primary">Charger plus</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUBSCRIBE SECTION -->
+    <section class="cta-section">
+        <h2>Abonnez-vous à Notre Chaîne YouTube</h2>
+        <p>Ne manquez aucun enseignement - Abonnez-vous pour recevoir les dernières vidéos</p>
+        <div class="cta-buttons">
+            <a href="https://www.youtube.com/@ltpevangile?sub_confirmation=1" target="_blank" class="cta-btn-primary">S'abonner sur YouTube</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>📍 Contact Info</h3>
+                <p>1, Stationsstraat - 1601 Ruisbroek, Brussels, Belgium</p>
+                <p>📞 +32 (0)2 333 00 33</p>
+                <p>📧 contact@ltpevangile.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">Qui Sommes-Nous</a></li>
+                    <li><a href="teachings.html">Enseignements</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Social Media</h3>
+                <p>
+                    <a href="https://www.youtube.com/@ltpevangile" target="_blank">📺 YouTube</a><br>
+                    <a href="https://www.facebook.com/ltpevangile" target="_blank">f Facebook</a><br>
+                    <a href="https://www.instagram.com/ltpevangile" target="_blank">📷 Instagram</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Le Temple du Plein Évangile. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/youtube-api.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
