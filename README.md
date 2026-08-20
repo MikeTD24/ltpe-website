@@ -4,7 +4,7 @@
 
 ## 📖 Description
 
-**Le Temple du Plein Évangile (LTPE)** est un site web professionnel et moderne conçu pour l'église évangélique LTPE basée à Bruxelles, Belgique. Le site offre une présence en ligne complète avec intégration YouTube dynamique, permettant aux membres et visiteurs de rester connectés aux enseignements et événements de l'église.
+**Le Temple du Plein Évangile (LTPE)** est un site web professionnel et moderne conçu pour l'église évangélique LTPE basée à Bruxelles, Belgique. Le site offre une présence en ligne complète avec intégration YouTube dynamique, permettant aux membres et visiteurs de rester connectés aux enseignements et événements de l'église. (Projet en cours) !
 
 ## ✨ Caractéristiques Principales
 
