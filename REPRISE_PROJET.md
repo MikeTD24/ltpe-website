@@ -23,6 +23,18 @@ L’ancien navigateur appelait directement l’API et exposait la clé dans le J
 
 ## Activation sur GitHub — reste à effectuer
 
+### État après publication
+
+- Connexion Git officielle validée avec le compte MikeTD24.
+- Modifications locales publiées sur `main` dans le commit `577a68d`, après intégration des deux changements distants du README.
+- GitHub Pages configuré avec le mode **GitHub Actions**, HTTPS conservé.
+- Adresse du site : https://miketd24.github.io/ltpe-website/.
+- Premier workflow de publication réussi : https://github.com/MikeTD24/ltpe-website/actions/runs/44364147465.
+- Reste à effectuer : créer une clé YouTube valide, l’enregistrer dans le secret de dépôt `YOUTUBE_API_KEY`, lancer la première synchronisation et vérifier les vidéos réelles.
+- Fréquence conservée : toutes les six heures.
+
+Les notes de vérification ci-dessous décrivent les étapes antérieures ; cet état de publication est le plus récent.
+
 ### Installer et connecter l’intégration GitHub
 
 La connexion à github.com dans le navigateur ne connecte pas automatiquement GitHub à ChatGPT/Codex.
