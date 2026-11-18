@@ -1,5 +1,16 @@
 # Reprise du site LTPE — 17 novembre 2026
 
+## Améliorations de l’accueil — 19 novembre 2026
+
+- Bouton Donner relié à `donner.html` sur toutes les pages : 2 Corinthiens 9 : 7, bénéficiaire L.TPE ASBL, IBAN BE24 0016 6583 3338, consigne de communication et remerciements. QR code à ajouter dès réception.
+- Photo de bienvenue remplacée par `images/Ltpe-Temple.jpeg`.
+- Section Horaire des Cultes/Événements : calendrier, horloge et soleil ; mention Zoom conservée ; quatrième carte vers `evenements.html`.
+- Icônes propres aux ministères : enfants et Bible, musique, mains en prière, outils. Les liens de l’accueil continuent à mener à Grandir et servir ensemble ; ses quatre cartes ouvrent désormais `ecodim.html`, `louange.html`, `priere.html` et `logistique.html`.
+- Page `pasteur.html` avec la même photo, la présentation fournie de Martin MFUAMBA MUAMBA et les références de son livre (OAS7200, EAN 9782369572008, éditeur Oasis).
+- Soutenir l’église propose un lien vers la page de don et conserve le bouton de contact.
+- Pages Événements et ministères préparées sans inventer d’annonces, de dates ni de contenus à venir.
+- Workflow Pages adapté pour publier toutes les pages HTML. Contrôle des chemins, ancres, identifiants, icônes SVG et contenus demandés réussi sur les dix pages. Contrôle visuel automatisé non disponible dans cette session.
+
 ## Modifications locales
 
 - Conservation du projet HTML/CSS/JavaScript et des photos existantes.

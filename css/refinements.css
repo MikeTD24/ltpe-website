@@ -66,6 +66,55 @@ section { padding: 48px 20px; }
 .donation { text-align: center; }
 .footer-section h3 { font-size: 1.3rem; }
 .menu-toggle { display: none; }
+.section-icon { width: 52px; height: 52px; display: block; color: var(--primary-gold); }
+.schedule-grid { grid-template-columns: repeat(4, minmax(0,1fr)); gap: 20px; }
+.schedule-card { padding: 26px 18px; }
+.schedule-card h3 { font-size: 1.15rem; }
+.schedule-event { display: block; text-decoration: none; border: 1px solid #b6903650; color: var(--text-dark); }
+.card-link-label { display: inline-block; margin-top: 10px; color: #795a18; font-weight: 700; font-size: .9rem; }
+.schedule-event:hover .card-link-label, .ministry-card:hover .card-link-label { text-decoration: underline; }
+a.ministry-card { display: block; color: inherit; text-decoration: none; border-radius: 12px; }
+.donation p a, .text-link, .bank-card a, .book-panel a:not(.btn-primary) { color: #795a18; text-underline-offset: 4px; }
+.page-intro { padding: 64px 20px; background: #f4f4f2; text-align: center; border-bottom: 1px solid #e9e7e0; }
+.page-intro h1 { font-size: clamp(2rem,4vw,3rem); max-width: 1000px; margin: 0 auto 16px; line-height: 1.2; font-weight: 800; }
+.page-intro p { max-width: 680px; margin: 0 auto; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .875rem; font-weight: 700; color: #795a18; margin-bottom: 16px !important; }
+.giving-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 50px; align-items: center; }
+.giving-message h2, .bank-card h2, .profile-copy h2, .ministry-detail h2 { text-align: left; }
+.giving-symbol { font-size: 4rem; line-height: 1; color: var(--primary-gold); }
+.scripture { border-left: 3px solid var(--primary-gold); padding: 6px 0 6px 22px; }
+.scripture p { font-size: 1.2rem; color: var(--text-dark); line-height: 1.85; }
+.scripture cite { font-style: normal; font-weight: 700; color: #795a18; }
+.bank-card { background: white; border: 1px solid #e5dfd1; border-radius: 18px; padding: 32px; box-shadow: 0 10px 40px #2026310d; }
+.bank-card h2 { font-size: 1.5rem; }
+.bank-details > div { padding: 18px 0; border-top: 1px solid #ece8df; }
+dt { color: var(--text-light); font-size: .9rem; font-weight: 600; margin-bottom: 6px; }
+dd { margin: 0; font-weight: 600; }
+.iban { font-size: clamp(1.05rem,2.2vw,1.45rem); letter-spacing: .04em; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+.thank-you { max-width: 760px; text-align: center; }
+.thank-you p { margin-bottom: 24px; }
+.pastor-profile { display: grid; grid-template-columns: 300px 1fr; gap: 50px; align-items: start; }
+.pastor-portrait { width: 100%; height: auto; border-radius: 16px; display: block; }
+.pastor-profile figcaption { font-size: .9rem; color: var(--text-light); text-align: center; padding-top: 12px; }
+.profile-copy p { line-height: 1.9; }
+.book-panel { max-width: 850px; text-align: center; }
+.book-details { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px 50px; margin: 28px 0; }
+.coming-soon { max-width: 780px; text-align: center; padding-top: 12px; padding-bottom: 30px; }
+.feature-icon { display: flex; justify-content: center; margin-bottom: 24px; }
+.page-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 24px; }
+.coming-soon .page-actions { justify-content: center; }
+.ministry-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.ministry-cover { width: 100%; max-height: 400px; object-fit: cover; border-radius: 16px; }
+.ministry-detail .feature-icon { justify-content: flex-start; }
+@media (min-width: 761px) and (max-width: 1100px) { .schedule-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 760px) {
+ .schedule-grid, .giving-layout, .pastor-profile, .ministry-detail { grid-template-columns: 1fr; }
+ .giving-layout, .pastor-profile, .ministry-detail { gap: 30px; }
+ .page-intro { padding: 44px 16px; }
+ .bank-card { padding: 24px 18px; }
+ .pastor-profile figure { max-width: 300px; margin: 0 auto; }
+ .page-actions { align-items: stretch; flex-direction: column; text-align: center; }
+}
 @media (max-width: 1190px) {
  .header-container { grid-template-columns: 100px 1fr; gap: 16px; }
  .header-actions { grid-column: 2; justify-self: center; }

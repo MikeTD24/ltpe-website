@@ -16,12 +16,12 @@
   <header class="site-header">
     <div class="header-container">
 
-      <a href="index.html" class="active" class="logo" aria-label="Accueil - Le Temple du Plein Évangile">
+      <a href="index.html" class="logo" aria-label="Accueil - Le Temple du Plein Évangile">
         <img src="images/Ltpe-logo.jpeg" alt="Logo Le Temple du Plein Évangile">
       </a>
 
       <nav class="main-nav" aria-label="Navigation principale">
-        <a href="index.html">Accueil</a>
+        <a href="index.html" class="active" aria-current="page">Accueil</a>
         <a href="about.html">Qui Sommes-Nous</a>
         <a href="index.html#cultes-evenements">Cultes & Événements</a>
         <a href="teachings.html">Enseignements</a>
@@ -30,7 +30,7 @@
       </nav>
 
       <div class="header-actions">
-        <a href="index.html#don" class="donate-btn">DONNER</a>
+        <a href="donner.html" class="donate-btn">DONNER</a>
 
         <div class="social-icons" aria-label="Réseaux sociaux">
           <a href="https://www.facebook.com/share/1MmgVc2Duj/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -86,7 +86,7 @@
           </div>
 
           <div class="welcome-image">
-            <img src="images/Ltpe.jpg" alt="Assemblée du Temple du Plein Évangile">
+            <img src="images/Ltpe-Temple.jpeg" alt="La communauté réunie dans la salle du Temple du Plein Évangile">
           </div>
         </div>
       </div>
@@ -95,12 +95,12 @@
     <!-- SCHEDULE -->
     <section id="cultes-evenements" class="schedule-section">
       <div class="container">
-        <h2>Horaires des Cultes</h2>
+        <h2>Horaire des Cultes/Événements</h2>
 
         <div class="schedule-grid">
           <article class="schedule-card">
             <div class="schedule-icon">
-              <span class="gold-icon" aria-hidden="true">✝</span>
+              <svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#calendar"></use></svg>
             </div>
             <h3>Dimanche</h3>
             <p class="schedule-time">10h - 12h</p>
@@ -109,7 +109,7 @@
 
           <article class="schedule-card">
             <div class="schedule-icon">
-              <span class="gold-icon" aria-hidden="true">✝</span>
+              <svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#clock"></use></svg>
             </div>
             <h3>Mercredi & Vendredi</h3>
             <p class="schedule-time">19h30 - 20h30</p>
@@ -118,12 +118,19 @@
 
           <article class="schedule-card">
             <div class="schedule-icon">
-              <span class="gold-icon" aria-hidden="true">✝</span>
+              <svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#sun"></use></svg>
             </div>
             <h3>Prières Matinales</h3>
             <p class="schedule-time">6h - 7h</p>
-            <p class="schedule-description">À la Brèche - chaque dernière semaine du mois</p>
+            <p class="schedule-description">À la Brèche — chaque dernière semaine du mois via Zoom</p>
           </article>
+          <a class="schedule-card schedule-event" href="evenements.html">
+            <div class="schedule-icon"><svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#events"></use></svg></div>
+            <h3>Événements</h3>
+            <p class="schedule-time">À venir</p>
+            <p class="schedule-description">Découvrez les prochains rendez-vous de l’église.</p>
+            <span class="card-link-label">Voir les événements</span>
+          </a>
         </div>
       </div>
     </section>
@@ -151,7 +158,7 @@
         <div class="departments-grid">
           <a href="about.html#ecodim" class="department-card">
             <div class="department-icon">
-              <span class="gold-icon" aria-hidden="true">✝</span>
+              <svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#children"></use></svg>
             </div>
             <h3>ECODIM</h3>
             <p>École du Dimanche pour l’enseignement biblique des enfants et des jeunes.</p>
@@ -159,7 +166,7 @@
 
           <a href="about.html#louange" class="department-card">
             <div class="department-icon">
-              <span class="gold-icon" aria-hidden="true">✝</span>
+              <svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#music"></use></svg>
             </div>
             <h3>Groupe de Louange</h3>
             <p>Une équipe dédiée à l’adoration, à la musique et à la louange pendant les cultes.</p>
@@ -167,7 +174,7 @@
 
           <a href="about.html#priere" class="department-card">
             <div class="department-icon">
-              <span class="gold-icon" aria-hidden="true">✝</span>
+              <svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#prayer"></use></svg>
             </div>
             <h3>Groupe de Prière</h3>
             <p>Un ministère centré sur l’intercession, le soutien spirituel et la prière communautaire.</p>
@@ -175,7 +182,7 @@
 
           <a href="about.html#logistique" class="department-card">
             <div class="department-icon">
-              <span class="gold-icon" aria-hidden="true">✝</span>
+              <svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#tools"></use></svg>
             </div>
             <h3>Groupe Logistique</h3>
             <p>Une équipe qui veille à la bonne organisation pratique des activités et événements.</p>
@@ -189,19 +196,19 @@
       <div class="container">
         <div class="pastor-section">
           <div class="pastor-image">
-            <img src="images/Pastor1.jpg" alt="Pasteur Martin Mfuamba">
+            <img src="images/Pastor1.jpg" alt="Pasteur Martin MFUAMBA MUAMBA">
           </div>
 
           <div class="pastor-content">
-            <h2>Notre Pasteur - Pasteur Martin Mfuamba</h2>
+            <h2>Notre Pasteur — Pasteur Martin MFUAMBA MUAMBA</h2>
             <p class="pastor-role"><strong>Pasteur Principal</strong></p>
             <p>
-              Le Pasteur Martin Mfuamba conduit l’église avec dévouement, foi et fidélité à la Parole de Dieu.
+              Le pasteur Martin MFUAMBA MUAMBA conduit l’église avec dévouement, foi et fidélité à la Parole de Dieu.
               Son ministère est marqué par l’enseignement biblique, l’accompagnement spirituel et le service envers la communauté.
             </p>
             
 
-            <a href="about.html#pasteur" class="btn-primary">En savoir plus</a>
+            <a href="pasteur.html" class="btn-primary">En savoir plus</a>
           </div>
         </div>
       </div>
@@ -251,7 +258,7 @@
       </div>
     </section>
 
-  <section id="don" class="light-bg"><div class="container donation"><h2>Soutenir l’église</h2><p>Pour connaître les modalités de don, contactez directement l’église.</p><a class="btn-primary" href="#contact">Nous contacter</a></div></section>
+  <section id="don" class="light-bg"><div class="container donation"><h2>Soutenir l’église</h2><p>Pour connaître les modalités de don, contactez directement l’église ou <a href="donner.html">faites votre don en cliquant ici</a>.</p><a class="btn-primary" href="#contact">Nous contacter</a></div></section>
   </main>
 
   <!-- FOOTER -->

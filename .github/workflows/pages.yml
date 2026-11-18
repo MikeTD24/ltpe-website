@@ -28,7 +28,7 @@ jobs:
       - name: Préparer les seuls fichiers publics
         run: |
           mkdir -p _site
-          cp index.html about.html teachings.html _site/
+          cp -- *.html _site/
           cp -R css js images data _site/
           rm -f _site/images/Homepage.png _site/images/Aboutpage.png _site/images/Teachingspage.png
       - uses: actions/upload-pages-artifact@v3
