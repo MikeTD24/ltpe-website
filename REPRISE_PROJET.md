@@ -30,7 +30,10 @@ L’ancien navigateur appelait directement l’API et exposait la clé dans le J
 - GitHub Pages configuré avec le mode **GitHub Actions**, HTTPS conservé.
 - Adresse du site : https://miketd24.github.io/ltpe-website/.
 - Premier workflow de publication réussi : https://github.com/MikeTD24/ltpe-website/actions/runs/44364147465.
-- Reste à effectuer : créer une clé YouTube valide, l’enregistrer dans le secret de dépôt `YOUTUBE_API_KEY`, lancer la première synchronisation et vérifier les vidéos réelles.
+- Nouvelle clé YouTube créée par le propriétaire et enregistrée uniquement dans le secret de dépôt `YOUTUBE_API_KEY`.
+- Première synchronisation réelle réussie le 18 novembre 2026 : **493 vidéos publiques** récupérées. Le catalogue a aussi été récupéré dans le projet local.
+- Exécution de synchronisation : https://github.com/MikeTD24/ltpe-website/actions/runs/44402632049.
+- La publication du catalogue est déclenchée automatiquement après chaque synchronisation réussie.
 - Fréquence conservée : toutes les six heures.
 
 Les notes de vérification ci-dessous décrivent les étapes antérieures ; cet état de publication est le plus récent.
