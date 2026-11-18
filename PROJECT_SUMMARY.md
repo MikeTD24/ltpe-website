@@ -3,7 +3,7 @@
 ## 🎉 Projet Terminé avec Succès !
 
 **Date** : 30 Mars 2024  
-**Développeur** : Manus AI Assistant  
+**Développeur** : Mike & Manus AI Assistant  
 **Client** : Le Temple du Plein Évangile (LTPE)  
 **Localisation** : Ruisbroek, Brussels, Belgium
 

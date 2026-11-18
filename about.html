@@ -7,83 +7,62 @@
     <title>Qui Sommes-Nous - Le Temple du Plein Évangile</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/refinements.css">
 </head>
 <body>
     <!-- HEADER / NAVIGATION -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <div class="logo-text">L.TPÉ<br><span style="font-size: 0.7rem;">LE TEMPLE DU PLEIN ÉVANGILE</span></div>
-            </div>
-            <nav>
-                <a href="index.html">Accueil</a>
-                <a href="about.html" class="active">Qui Sommes-Nous</a>
-                <a href="#cultes">Cultes & Événements</a>
-                <a href="teachings.html">Enseignements</a>
-                <a href="#ministeres">Ministères</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <div style="display: flex; gap: 1rem; align-items: center;">
-                <a href="#donate" class="donate-btn">DONNER</a>
-                <div class="social-icons">
-                    <a href="https://www.youtube.com/@ltpevangile" target="_blank">📺</a>
-                    <a href="https://www.facebook.com/ltpevangile" target="_blank">f</a>
-                    <a href="https://www.instagram.com/ltpevangile" target="_blank">📷</a>
-                </div>
-            </div>
+    <header class="site-header">
+    <div class="header-container">
+
+      <a href="index.html" class="logo" aria-label="Accueil - Le Temple du Plein Évangile">
+        <img src="images/Ltpe-logo.jpeg" alt="Logo Le Temple du Plein Évangile">
+      </a>
+
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="about.html" class="active">Qui Sommes-Nous</a>
+        <a href="index.html#cultes-evenements">Cultes & Événements</a>
+        <a href="teachings.html">Enseignements</a>
+        <a href="index.html#ministeres">Ministères</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="index.html#don" class="donate-btn">DONNER</a>
+
+        <div class="social-icons" aria-label="Réseaux sociaux">
+          <a href="https://www.facebook.com/share/1MmgVc2Duj/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img src="images/facebook_icon.png" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/ltpevangile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="images/Instagram_icon.png" alt="Instagram">
+          </a>
+          <a href="https://www.youtube.com/@ltpevangile" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <img src="images/YouTube_23392.png" alt="YouTube">
+          </a>
         </div>
-    </header>
+      </div>
+
+    </div>
+  </header>
 
     <!-- HERO SECTION -->
-    <section class="hero">
+    <main><section class="hero hero-about"><div class="hero-overlay"></div><div class="hero-content">
         <h1>Qui Sommes-Nous ?</h1>
-        <p>Découvrez notre histoire, notre vision et notre équipe</p>
+        <p>Découvrez notre histoire, notre vision et notre équipe</p></div>
     </section>
 
     <!-- HISTORY SECTION -->
     <section>
         <div class="container">
             <h2>Notre Histoire</h2>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+            <div class="history-grid">
                 <div>
                     <p>Le Temple du Plein Évangile (LTPE) a été fondé en 2012 à Bruxelles, Belgique. Notre église a commencé comme une petite communauté de croyants passionnés par la proclamation de l'Évangile complet de Jésus-Christ.</p>
                     <p>Depuis ses débuts, LTPE a grandi en nombre et en impact spirituel. Nous avons vu des vies transformées, des familles restaurées et des communautés touchées par la puissance du Saint-Esprit. Notre engagement envers l'excellence dans le ministère et l'intégrité dans nos actions nous a guidés tout au long de notre parcours.</p>
                     <p>Aujourd'hui, nous continuons à servir notre communauté avec passion, proclamant la Parole de Dieu avec amour et force, et invitant tous à expérimenter la grâce transformatrice de Jésus-Christ.</p>
                 </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-year">2012</div>
-                        <div class="timeline-content">
-                            <p>Fondation de l'église</p>
-                            <img src="images/timeline-2012.jpg" alt="2012" class="timeline-image">
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-year">2014</div>
-                        <div class="timeline-content">
-                            <p>Première expansion</p>
-                            <img src="images/timeline-2014.jpg" alt="2014" class="timeline-image">
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-year">2019</div>
-                        <div class="timeline-content">
-                            <p>Nouveaux ministères lancés</p>
-                            <img src="images/timeline-2019.jpg" alt="2019" class="timeline-image">
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-year">2023</div>
-                        <div class="timeline-content">
-                            <p>Présent et avenir</p>
-                            <img src="images/ltpe-logo.png" alt="2023" class="timeline-image">
-                        </div>
-                    </div>
-                </div>
+                <div class="history-gallery"><img src="images/Culte1.jpg" alt="Un culte de la communauté LTPE" loading="lazy"><img src="images/Gl1.jpg" alt="La louange à LTPE" loading="lazy"><img src="images/Ltpe-logo.jpeg" alt="Le Temple du Plein Évangile" loading="lazy"></div>
             </div>
         </div>
     </section>
@@ -141,7 +120,7 @@
         <div class="container">
             <div style="display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: center;">
                 <div style="text-align: center;">
-                    <img src="images/assemblees-de-dieu-logo.png" alt="Assemblées de DIEU" style="max-width: 150px; height: auto;">
+                    <span class="affiliation-mark" aria-hidden="true">✝</span>
                 </div>
                 <div>
                     <h3>Église Membre des Assemblées de DIEU</h3>
@@ -155,33 +134,33 @@
     <section>
         <div class="container">
             <h2>Notre Équipe Pastorale</h2>
-            <div class="team-grid">
+            <div class="team-grid" id="pasteur">
                 <div class="team-member">
-                    <img src="images/pastor-martin.jpg" alt="Pasteur Martin Mfuamba" class="team-member-image">
+                    <img src="images/Pastor1.jpg" alt="Pasteur Martin Mfuamba" class="team-member-image">
                     <div class="team-member-info">
-                        <h3>Pasteur Martin Mfuamba</h3>
+                        <h3>Pasteur Martin MFUEMBA</h3>
                         <p class="team-member-role">Pasteur Principal</p>
                         <p>Leadership visionnaire et engagement pastoral auprès de la communauté.</p>
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="images/team-member-2.jpg" alt="Frère Paul Bompona" class="team-member-image">
+                    <img src="images/avatar.svg" alt="Portrait à compléter : Paul Bampale" class="team-member-image">
                     <div class="team-member-info">
-                        <h3>Frère Paul Bompona</h3>
+                        <h3>Frère Paul BAMPALE</h3>
+                        <p class="team-member-role">Frère de l'église</p>
+                        <p>Engagement pastoral auprès de la communauté et ministère de la Parole.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="images/Abel.jpg" alt="Frère Abel Tebily" class="team-member-image">
+                    <div class="team-member-info">
+                        <h3>Frère Abel TEBILY</h3>
                         <p class="team-member-role">Pasteur Associé</p>
                         <p>Engagement pastoral auprès de la communauté et ministère de la Parole.</p>
                     </div>
                 </div>
                 <div class="team-member">
-                    <img src="images/team-member-3.jpg" alt="Frère Abel Tsiby" class="team-member-image">
-                    <div class="team-member-info">
-                        <h3>Frère Abel Tsiby</h3>
-                        <p class="team-member-role">Pasteur Associé</p>
-                        <p>Engagement pastoral auprès de la communauté et ministère de la Parole.</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <img src="images/team-member-4.jpg" alt="Autre Membre" class="team-member-image">
+                    <img src="images/avatar.svg" alt="Portrait à compléter" class="team-member-image">
                     <div class="team-member-info">
                         <h3>Autre Membre</h3>
                         <p class="team-member-role">Leadership</p>
@@ -192,6 +171,7 @@
         </div>
     </section>
 
+<section class="light-bg"><div class="container"><h2>Grandir et servir ensemble</h2><div class="departments-grid"><article class="ministry-card" id="ecodim"><img src="images/Ecodim1.jpeg" alt="École du dimanche" loading="lazy"><h3>École du dimanche</h3><p>Découvrir la Bible et grandir dans la foi dès l’enfance.</p></article><article class="ministry-card" id="louange"><img src="images/Gl1.jpg" alt="Groupe de louange" loading="lazy"><h3>Groupe de louange</h3><p>Célébrer Dieu ensemble par le chant et la musique.</p></article><article class="ministry-card" id="priere"><img src="images/Culte1.jpg" alt="Groupe de prière" loading="lazy"><h3>Groupe de prière</h3><p>Partager nos sujets de prière et intercéder ensemble.</p></article><article class="ministry-card" id="logistique"><img src="images/Sono1.jpg" alt="Groupe logistique" loading="lazy"><h3>Groupe logistique</h3><p>Servir la communauté et accompagner les rencontres de l’église.</p></article></div></div></section>
     <!-- CTA SECTION -->
     <section class="cta-section">
         <h2>Rejoignez Notre Famille</h2>
@@ -202,37 +182,49 @@
         </div>
     </section>
 
+    </main>
     <!-- FOOTER -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>📍 Contact Info</h3>
-                <p>1, Stationsstraat - 1601 Ruisbroek, Brussels, Belgium</p>
-                <p>📞 +32 (0)2 333 00 33</p>
-                <p>📧 contact@ltpevangile.com</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="about.html">Qui Sommes-Nous</a></li>
-                    <li><a href="teachings.html">Enseignements</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Social Media</h3>
-                <p>
-                    <a href="https://www.youtube.com/@ltpevangile" target="_blank">📺 YouTube</a><br>
-                    <a href="https://www.facebook.com/ltpevangile" target="_blank">f Facebook</a><br>
-                    <a href="https://www.instagram.com/ltpevangile" target="_blank">📷 Instagram</a>
-                </p>
-            </div>
+    <footer class="site-footer">
+    <div class="footer-container">
+
+      <div class="footer-section">
+        <h3>Coordonnées</h3>
+        <p><span class="footer-contact-icon">📍</span> 1, Stationsstraat - 1601</p>
+        <p><span class="footer-contact-icon">📞</span> +32-497 11 82 14</p>
+        <p><span class="footer-contact-icon">✉️</span> letempledupleinevangile@gmail.com</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Liens utiles</h3>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">Qui Sommes-Nous</a></li>
+          <li><a href="index.html#cultes-evenements">Cultes & Événements</a></li>
+          <li><a href="index.html#ministeres">Ministères</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Réseaux sociaux</h3>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/share/1MmgVc2Duj/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img src="images/facebook_icon.png" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/ltpevangile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="images/Instagram_icon.png" alt="Instagram">
+          </a>
+          <a href="https://www.youtube.com/@ltpevangile" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <img src="images/YouTube_23392.png" alt="YouTube">
+          </a>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Le Temple du Plein Évangile. Tous droits réservés.</p>
-        </div>
-    </footer>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Le Temple du Plein Évangile. Tous droits réservés.</p>
+    </div>
+  </footer>
 
     <script src="js/main.js"></script>
 </body>
