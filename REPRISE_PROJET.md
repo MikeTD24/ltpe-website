@@ -1,5 +1,12 @@
 # Reprise du site LTPE — 17 novembre 2026
 
+## Jeunesse, Femmes et Hommes — 19 novembre 2026
+
+- Photo `images/Ltpe-Jeunesse.jpeg` ajoutée à la carte Groupe de Jeunesse de Grandir et servir ensemble et à `jeunesse.html`. Affichage complet pour préserver les visages.
+- Groupes des Femmes et des Hommes ajoutés après la Jeunesse sur l’accueil, ainsi que dans les ministères d’À propos. Descriptifs, liens, icônes provisoires et pages `femmes.html` / `hommes.html` prêts à recevoir leurs contenus.
+- Grille de sept départements : quatre cartes puis trois centrées sur grand écran, adaptation sur tablette et mobile.
+- Traductions FR/NL/EN complétées. Style de code aéré conservé ; préférence consignée dans le fichier AGENTS.md du dossier de travail pour les reprises futures.
+
 ## Page À propos et lisibilité — 19 novembre 2026
 
 - Code HTML, CSS, JavaScript et workflows réindenté avec Prettier ; configuration conservée dans `.prettierrc.json`. Les blocs et les attributs sont désormais espacés.

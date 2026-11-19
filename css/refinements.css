@@ -1042,7 +1042,7 @@ dd {
   border-radius: 12px;
 }
 
-.youth-illustration {
+.ministry-placeholder {
   min-height: 300px;
   display: grid;
   place-items: center;
@@ -1050,14 +1050,45 @@ dd {
   border-radius: 16px;
 }
 
-.youth-illustration .section-icon {
+.ministry-placeholder .section-icon {
   width: 130px;
   height: 130px;
 }
 
+/* Seven departments: four cards, then three centred cards. */
+.departments-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.departments-grid > * {
+  grid-column: span 3;
+}
+
+.departments-grid > :nth-child(5) {
+  grid-column: 2 / span 3;
+}
+
+.departments-grid > :nth-child(6) {
+  grid-column: 5 / span 3;
+}
+
+.departments-grid > :nth-child(7) {
+  grid-column: 8 / span 3;
+}
+
 @media (max-width: 1100px) {
   .departments-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .departments-grid > *,
+  .departments-grid > :nth-child(5),
+  .departments-grid > :nth-child(6) {
+    grid-column: span 2;
+  }
+
+  .departments-grid > :nth-child(7) {
+    grid-column: 3 / span 2;
   }
 }
 
@@ -1070,6 +1101,13 @@ dd {
   .departments-grid,
   .affiliation-section {
     grid-template-columns: 1fr;
+  }
+
+  .departments-grid > *,
+  .departments-grid > :nth-child(5),
+  .departments-grid > :nth-child(6),
+  .departments-grid > :nth-child(7) {
+    grid-column: auto;
   }
 
   .affiliation-logo {

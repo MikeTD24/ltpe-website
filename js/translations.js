@@ -1,5 +1,22 @@
 /* Editorial translations. Names, bank details, book and YouTube titles stay original. */
 window.LTPE_TRANSLATIONS = [
+  ['Groupe des Femmes', 'Vrouwengroep', 'Women’s group'],
+  ['Groupe des Hommes', 'Mannengroep', 'Men’s group'],
+  [
+    'Un espace de partage, de prière et d’encouragement entre femmes.',
+    'Een plek waar vrouwen delen, bidden en elkaar bemoedigen.',
+    'A place for women to share, pray and encourage one another.',
+  ],
+  [
+    'Un espace de fraternité, de prière et d’engagement entre hommes.',
+    'Een plek waar mannen samenkomen, bidden en zich inzetten.',
+    'A place for men to build fellowship, pray and serve together.',
+  ],
+  [
+    'Le Groupe de Jeunesse de LTPE réuni ensemble',
+    'De jongerengroep van LTPE samen',
+    'The LTPE youth group gathered together',
+  ],
   ['Les étapes de notre histoire', 'De stappen in onze geschiedenis', 'Milestones in our history'],
   ['Bruxelles-Midi', 'Brussel-Zuid', 'Brussels-Midi'],
   [
