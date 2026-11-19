@@ -1,20 +1,20 @@
 {
-  "updatedAt": "2026-11-19T00:20:12.989917+00:00",
+  "updatedAt": "2026-11-19T15:41:32.918705+00:00",
   "channelHandle": "@ltpevangile",
   "videos": [
+    {
+      "id": "zHWleb4MbI8",
+      "title": "Le Temple du Plein Evangile - L.TPE",
+      "description": "",
+      "publishedAt": "2026-11-19T07:47:55Z",
+      "duration": "PT1H18M45S"
+    },
     {
       "id": "2Q1xS018HRQ",
       "title": "Martin Mfuamba Muamba - Salle de réunion personnelle",
       "description": "",
       "publishedAt": "2026-11-18T18:34:49Z",
       "duration": "PT3M33S"
-    },
-    {
-      "id": "zHWleb4MbI8",
-      "title": "Le Temple du Plein Evangile - L.TPE",
-      "description": "",
-      "publishedAt": "2026-11-18T18:19:58Z",
-      "duration": "PT1H18M44S"
     },
     {
       "id": "3mlJmbWzDn4",
