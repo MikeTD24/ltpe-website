@@ -3,13 +3,13 @@
    =================================== */
 
 :root {
-  --primary-gold: #D4AF37;
-  --primary-dark: #1A2332;
-  --secondary-light: #F5F5F5;
+  --primary-gold: #d4af37;
+  --primary-dark: #1a2332;
+  --secondary-light: #f5f5f5;
   --text-dark: #333333;
   --text-light: #666666;
-  --white: #FFFFFF;
-  --border-light: #E0E0E0;
+  --white: #ffffff;
+  --border-light: #e0e0e0;
 }
 
 * {
@@ -30,7 +30,12 @@ body {
 }
 
 /* ===== TYPOGRAPHIE ===== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   color: var(--text-dark);
@@ -81,7 +86,7 @@ p {
 .logo {
   display: flex;
   align-items: center;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   text-decoration: none;
 }
 
@@ -113,7 +118,7 @@ p {
 }
 
 .main-nav a.active::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: -11px;
@@ -145,7 +150,9 @@ p {
   align-items: center;
   justify-content: center;
   min-width: 120px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .donate-btn:hover {
@@ -235,7 +242,7 @@ p {
 }
 
 .btn-primary:hover {
-  background-color: #C99D2E;
+  background-color: #c99d2e;
 }
 
 .btn-secondary {
@@ -267,7 +274,6 @@ p {
   font-size: 1rem;
   text-align: center;
 }
-
 
 /* ===== CONTAINER ===== */
 .container {
@@ -318,7 +324,6 @@ section.light-bg {
   border-radius: 16px;
 }
 
-
 /* ===== SCHEDULE SECTION ===== */
 .schedule-grid {
   display: grid;
@@ -333,7 +338,9 @@ section.light-bg {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .schedule-card:hover {
@@ -410,7 +417,7 @@ section.light-bg {
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
-  color: #FF0000;
+  color: #ff0000;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -453,7 +460,9 @@ section.light-bg {
   border-radius: 14px;
   text-align: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   text-decoration: none;
   color: var(--text-dark);
   display: block;
@@ -629,13 +638,12 @@ section.light-bg {
 }
 
 .form-submit:hover {
-  background-color: #C99D2E;
+  background-color: #c99d2e;
 }
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-
 }
 
 /* ===== FOOTER ===== */

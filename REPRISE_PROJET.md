@@ -1,5 +1,18 @@
 # Reprise du site LTPE — 17 novembre 2026
 
+## Page À propos et lisibilité — 19 novembre 2026
+
+- Code HTML, CSS, JavaScript et workflows réindenté avec Prettier ; configuration conservée dans `.prettierrc.json`. Les blocs et les attributs sont désormais espacés.
+- Hauteur et point de cadrage des bandeaux Accueil/À propos ajustés pour préserver les visages sur les écrans larges.
+- Frise par lieux, sans anciennes photos inventées : 2012 Bruxelles-Midi ; 2013–2020 Ixelles ; depuis 2022 Ruisbroek ; aujourd’hui. Une note publique précise que les dates de déménagement sont provisoires, dans l’attente de confirmation.
+- Valeurs conservées comme textes explicatifs. Communion fraternelle mène à Événements ; Puissance du Saint-Esprit mène au groupe de prière. Les pasteurs invités pourront être présentés dans les événements de leur visite plutôt que dans l’équipe permanente.
+- Logo officiel ADFB copié depuis https://adfb.be/wp-content/uploads/2017/06/Logo-ADFB.png vers `images/adfb-logo.png`. Nom d’affiliation harmonisé avec « Assemblées de Dieu francophones de Belgique ».
+- Équipe permanente de trois personnes : Martin MFUAMBA MUAMBA, Paul BAMPALE et Abel TEBILY (rôle corrigé en Pasteur Stagiaire). Carte Autre Membre supprimée.
+- Portrait de Paul préparé avec l’outil ImageGen intégré depuis la deuxième capture, originaux conservés. Asset : `images/paul-bampale-portrait.png`. Consigne : extraire le portrait photographique de Paul BAMPALE, préserver son identité, ses lunettes, son expression et ses vêtements, retirer les textes et le cadre, fond gris discret ; aucune modification volontaire des traits.
+- Louange : photographie complète affichée sans recadrage des visages, y compris sur sa page dédiée. Prière : photo existante `Culte2.jpg` montrant l’assemblée en prière.
+- Cinquième département Groupe de Jeunesse sur l’accueil et À propos, avec page `jeunesse.html` prête à recevoir photos et vidéos.
+- Traductions FR/NL/EN complétées ; tests DOM réussis sur les onze pages. Chemins, ancres, composition de l’équipe et frise vérifiés.
+
 ## Langues et marché de Noël — 19 novembre 2026
 
 - Sélecteur **FR / NL / EN** sur les dix pages. La langue choisie est mémorisée dans le navigateur et transmise dans les liens (`?lang=nl`, par exemple).

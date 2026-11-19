@@ -1,314 +1,404 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Le Temple du Plein Évangile - Une église où la parole de Dieu est proclamée avec amour et force.">
-  <title>Accueil - Le Temple du Plein Évangile</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Le Temple du Plein Évangile - Une église où la parole de Dieu est proclamée avec amour et force." />
+    <title>Accueil - Le Temple du Plein Évangile</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/refinements.css">
-  <script src="js/translations.js" defer></script>
-  <script src="js/i18n.js" defer></script>
-  <script src="js/events.js" defer></script>
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/refinements.css" />
+    <script src="js/translations.js" defer></script>
+    <script src="js/i18n.js" defer></script>
+    <script src="js/events.js" defer></script>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="logo" aria-label="Accueil - Le Temple du Plein Évangile">
+          <img src="images/Ltpe-logo.jpeg" alt="Logo Le Temple du Plein Évangile" />
+        </a>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="header-container">
+        <nav class="main-nav" aria-label="Navigation principale">
+          <a href="index.html" class="active" aria-current="page">Accueil</a>
+          <a href="about.html">Qui Sommes-Nous</a>
+          <a href="index.html#cultes-evenements">Cultes & Événements</a>
+          <a href="teachings.html">Enseignements</a>
+          <a href="index.html#ministeres">Ministères</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
 
-      <a href="index.html" class="logo" aria-label="Accueil - Le Temple du Plein Évangile">
-        <img src="images/Ltpe-logo.jpeg" alt="Logo Le Temple du Plein Évangile">
-      </a>
+        <div class="header-actions">
+          <a href="donner.html" class="donate-btn">DONNER</a>
 
-      <nav class="main-nav" aria-label="Navigation principale">
-        <a href="index.html" class="active" aria-current="page">Accueil</a>
-        <a href="about.html">Qui Sommes-Nous</a>
-        <a href="index.html#cultes-evenements">Cultes & Événements</a>
-        <a href="teachings.html">Enseignements</a>
-        <a href="index.html#ministeres">Ministères</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <a href="donner.html" class="donate-btn">DONNER</a>
-
-        <div class="social-icons" aria-label="Réseaux sociaux">
-          <a href="https://www.facebook.com/share/1MmgVc2Duj/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <img src="images/facebook_icon.png" alt="Facebook">
-          </a>
-          <a href="https://www.instagram.com/ltpevangile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <img src="images/Instagram_icon.png" alt="Instagram">
-          </a>
-          <a href="https://www.youtube.com/@ltpevangile" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            <img src="images/YouTube_23392.png" alt="YouTube">
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </header>
-
-  <aside id="event-announcement" class="event-announcement" hidden aria-label="Événements à venir"></aside>
-  <main>
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-overlay"></div>
-
-      <div class="hero-content">
-        <h1>Le Temple du Plein Évangile</h1>
-        <p>Une église où la parole de Dieu est proclamée avec amour et force !</p>
-
-        <div class="hero-buttons">
-          <a href="#contact" class="btn-primary">Nous Rejoindre</a>
-          <a href="teachings.html" class="btn-secondary">Regarder en Ligne</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- WELCOME -->
-    <section class="welcome-block section-light">
-      <div class="container">
-        <div class="welcome-section">
-          <div class="welcome-content">
-            <h2>Bienvenue à LTPE</h2>
-            <p>
-              Le Temple du Plein Évangile (LTPE) est une église chrétienne engagée à proclamer
-              l’Évangile complet de Jésus-Christ avec amour, vérité et puissance.
-            </p>
-            <p>
-              Nous croyons à une foi vivante, à la transformation des vies par la Parole de Dieu,
-              et à l’action du Saint-Esprit au sein de notre communauté.
-            </p>
-            <p>
-              Que vous soyez de passage, en recherche spirituelle ou déjà engagé dans la foi,
-              nous vous accueillons avec joie dans une atmosphère fraternelle et chaleureuse.
-            </p>
-          </div>
-
-          <div class="welcome-image">
-            <img src="images/Ltpe-Temple.jpeg" alt="La communauté réunie dans la salle du Temple du Plein Évangile">
+          <div class="social-icons" aria-label="Réseaux sociaux">
+            <a
+              href="https://www.facebook.com/share/1MmgVc2Duj/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook">
+              <img src="images/facebook_icon.png" alt="Facebook" />
+            </a>
+            <a
+              href="https://www.instagram.com/ltpevangile"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram">
+              <img src="images/Instagram_icon.png" alt="Instagram" />
+            </a>
+            <a
+              href="https://www.youtube.com/@ltpevangile"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube">
+              <img src="images/YouTube_23392.png" alt="YouTube" />
+            </a>
           </div>
         </div>
       </div>
-    </section>
+    </header>
 
-    <!-- SCHEDULE -->
-    <section id="cultes-evenements" class="schedule-section">
-      <div class="container">
-        <h2>Horaire des Cultes/Événements</h2>
+    <aside
+      id="event-announcement"
+      class="event-announcement"
+      hidden
+      aria-label="Événements à venir"></aside>
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-overlay"></div>
 
-        <div class="schedule-grid">
-          <article class="schedule-card">
-            <div class="schedule-icon">
-              <svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#calendar"></use></svg>
-            </div>
-            <h3>Dimanche</h3>
-            <p class="schedule-time">10h - 12h</p>
-            <p class="schedule-description">Culte de Célébration</p>
-          </article>
+        <div class="hero-content">
+          <h1>Le Temple du Plein Évangile</h1>
+          <p>Une église où la parole de Dieu est proclamée avec amour et force !</p>
 
-          <article class="schedule-card">
-            <div class="schedule-icon">
-              <svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#clock"></use></svg>
-            </div>
-            <h3>Mercredi & Vendredi</h3>
-            <p class="schedule-time">19h30 - 20h30</p>
-            <p class="schedule-description">Réunions de Prière</p>
-          </article>
-
-          <article class="schedule-card">
-            <div class="schedule-icon">
-              <svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#sun"></use></svg>
-            </div>
-            <h3>Prières Matinales</h3>
-            <p class="schedule-time">6h - 7h</p>
-            <p class="schedule-description">À la Brèche — chaque dernière semaine du mois via Zoom</p>
-          </article>
-          <a class="schedule-card schedule-event" href="evenements.html">
-            <div class="schedule-icon"><svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#events"></use></svg></div>
-            <h3>Événements</h3>
-            <p class="schedule-time">À venir</p>
-            <p class="schedule-description">Découvrez les prochains rendez-vous de l’église.</p>
-            <span class="card-link-label">Voir les événements</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERMONS -->
-    <section class="sermons-section section-light">
-      <div class="container">
-        <h2>Dernières Prédications</h2>
-
-        <div class="sermons-grid" id="sermons-container">
-          <!-- Les vidéos YouTube seront injectées ici via JavaScript -->
-        </div>
-
-        <div class="section-cta">
-          <a href="teachings.html" class="btn-primary">Voir toutes les prédications</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- MINISTRIES -->
-    <section id="ministeres" class="ministries-section">
-      <div class="container">
-        <h2>L'Église LTPE, c'est...</h2>
-
-        <div class="departments-grid">
-          <a href="about.html#ecodim" class="department-card">
-            <div class="department-icon">
-              <svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#children"></use></svg>
-            </div>
-            <h3>ECODIM</h3>
-            <p>École du Dimanche pour l’enseignement biblique des enfants et des jeunes.</p>
-          </a>
-
-          <a href="about.html#louange" class="department-card">
-            <div class="department-icon">
-              <svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#music"></use></svg>
-            </div>
-            <h3>Groupe de Louange</h3>
-            <p>Une équipe dédiée à l’adoration, à la musique et à la louange pendant les cultes.</p>
-          </a>
-
-          <a href="about.html#priere" class="department-card">
-            <div class="department-icon">
-              <svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#prayer"></use></svg>
-            </div>
-            <h3>Groupe de Prière</h3>
-            <p>Un ministère centré sur l’intercession, le soutien spirituel et la prière communautaire.</p>
-          </a>
-
-          <a href="about.html#logistique" class="department-card">
-            <div class="department-icon">
-              <svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#tools"></use></svg>
-            </div>
-            <h3>Groupe Logistique</h3>
-            <p>Une équipe qui veille à la bonne organisation pratique des activités et événements.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- PASTOR -->
-    <section class="pastor-wrapper section-light">
-      <div class="container">
-        <div class="pastor-section">
-          <div class="pastor-image">
-            <img src="images/Pastor1.jpg" alt="Pasteur Martin MFUAMBA MUAMBA">
-          </div>
-
-          <div class="pastor-content">
-            <h2>Notre Pasteur — Pasteur Martin MFUAMBA MUAMBA</h2>
-            <p class="pastor-role"><strong>Pasteur Principal</strong></p>
-            <p>
-              Le pasteur Martin MFUAMBA MUAMBA conduit l’église avec dévouement, foi et fidélité à la Parole de Dieu.
-              Son ministère est marqué par l’enseignement biblique, l’accompagnement spirituel et le service envers la communauté.
-            </p>
-            
-
-            <a href="pasteur.html" class="btn-primary">En savoir plus</a>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn-primary">Nous Rejoindre</a>
+            <a href="teachings.html" class="btn-secondary">Regarder en Ligne</a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact-wrapper">
-      <div class="container">
-        <h2>Rejoignez-Nous</h2>
+      <!-- WELCOME -->
+      <section class="welcome-block section-light">
+        <div class="container">
+          <div class="welcome-section">
+            <div class="welcome-content">
+              <h2>Bienvenue à LTPE</h2>
+              <p>
+                Le Temple du Plein Évangile (LTPE) est une église chrétienne engagée à proclamer
+                l’Évangile complet de Jésus-Christ avec amour, vérité et puissance.
+              </p>
+              <p>
+                Nous croyons à une foi vivante, à la transformation des vies par la Parole de Dieu,
+                et à l’action du Saint-Esprit au sein de notre communauté.
+              </p>
+              <p>
+                Que vous soyez de passage, en recherche spirituelle ou déjà engagé dans la foi, nous
+                vous accueillons avec joie dans une atmosphère fraternelle et chaleureuse.
+              </p>
+            </div>
 
-        <div class="contact-section">
-          <div class="map-container">
-            <iframe
-              src="https://maps.google.com/maps?q=Stationsstraat%201%2C%201601%20Ruisbroek%2C%20Belgique&amp;output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen
-              title="Carte Google Maps de l'église">
-            </iframe>
+            <div class="welcome-image">
+              <img
+                src="images/Ltpe-Temple.jpeg"
+                alt="La communauté réunie dans la salle du Temple du Plein Évangile" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCHEDULE -->
+      <section id="cultes-evenements" class="schedule-section">
+        <div class="container">
+          <h2>Horaire des Cultes/Événements</h2>
+
+          <div class="schedule-grid">
+            <article class="schedule-card">
+              <div class="schedule-icon">
+                <svg class="section-icon" aria-hidden="true" focusable="false">
+                  <use href="images/icons.svg#calendar"></use>
+                </svg>
+              </div>
+              <h3>Dimanche</h3>
+              <p class="schedule-time">10h - 12h</p>
+              <p class="schedule-description">Culte de Célébration</p>
+            </article>
+
+            <article class="schedule-card">
+              <div class="schedule-icon">
+                <svg class="section-icon" aria-hidden="true" focusable="false">
+                  <use href="images/icons.svg#clock"></use>
+                </svg>
+              </div>
+              <h3>Mercredi & Vendredi</h3>
+              <p class="schedule-time">19h30 - 20h30</p>
+              <p class="schedule-description">Réunions de Prière</p>
+            </article>
+
+            <article class="schedule-card">
+              <div class="schedule-icon">
+                <svg class="section-icon" aria-hidden="true" focusable="false">
+                  <use href="images/icons.svg#sun"></use>
+                </svg>
+              </div>
+              <h3>Prières Matinales</h3>
+              <p class="schedule-time">6h - 7h</p>
+              <p class="schedule-description">
+                À la Brèche — chaque dernière semaine du mois via Zoom
+              </p>
+            </article>
+            <a class="schedule-card schedule-event" href="evenements.html">
+              <div class="schedule-icon">
+                <svg class="section-icon" aria-hidden="true" focusable="false">
+                  <use href="images/icons.svg#events"></use>
+                </svg>
+              </div>
+              <h3>Événements</h3>
+              <p class="schedule-time">À venir</p>
+              <p class="schedule-description">Découvrez les prochains rendez-vous de l’église.</p>
+              <span class="card-link-label">Voir les événements</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERMONS -->
+      <section class="sermons-section section-light">
+        <div class="container">
+          <h2>Dernières Prédications</h2>
+
+          <div class="sermons-grid" id="sermons-container">
+            <!-- Les vidéos YouTube seront injectées ici via JavaScript -->
           </div>
 
-          <div class="contact-form-block">
-            <p class="contact-address">📍 1, Stationsstraat - 1601 Ruisbroek, Brussels, Belgium</p>
+          <div class="section-cta">
+            <a href="teachings.html" class="btn-primary">Voir toutes les prédications</a>
+          </div>
+        </div>
+      </section>
 
-            <form id="contact-form" class="contact-form">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="name">Nom</label>
-                  <input type="text" id="name" name="name" placeholder="Votre nom" required>
+      <!-- MINISTRIES -->
+      <section id="ministeres" class="ministries-section">
+        <div class="container">
+          <h2>L'Église LTPE, c'est...</h2>
+
+          <div class="departments-grid">
+            <a href="about.html#ecodim" class="department-card">
+              <div class="department-icon">
+                <svg class="section-icon" aria-hidden="true" focusable="false">
+                  <use href="images/icons.svg#children"></use>
+                </svg>
+              </div>
+              <h3>ECODIM</h3>
+              <p>École du Dimanche pour l’enseignement biblique des enfants et des jeunes.</p>
+            </a>
+
+            <a href="about.html#louange" class="department-card">
+              <div class="department-icon">
+                <svg class="section-icon" aria-hidden="true" focusable="false">
+                  <use href="images/icons.svg#music"></use>
+                </svg>
+              </div>
+              <h3>Groupe de Louange</h3>
+              <p>
+                Une équipe dédiée à l’adoration, à la musique et à la louange pendant les cultes.
+              </p>
+            </a>
+
+            <a href="about.html#priere" class="department-card">
+              <div class="department-icon">
+                <svg class="section-icon" aria-hidden="true" focusable="false">
+                  <use href="images/icons.svg#prayer"></use>
+                </svg>
+              </div>
+              <h3>Groupe de Prière</h3>
+              <p>
+                Un ministère centré sur l’intercession, le soutien spirituel et la prière
+                communautaire.
+              </p>
+            </a>
+
+            <a href="about.html#logistique" class="department-card">
+              <div class="department-icon">
+                <svg class="section-icon" aria-hidden="true" focusable="false">
+                  <use href="images/icons.svg#tools"></use>
+                </svg>
+              </div>
+              <h3>Groupe Logistique</h3>
+              <p>
+                Une équipe qui veille à la bonne organisation pratique des activités et événements.
+              </p>
+            </a>
+            <a href="jeunesse.html" class="department-card">
+              <div class="department-icon">
+                <svg class="section-icon" aria-hidden="true" focusable="false">
+                  <use href="images/icons.svg#youth"></use>
+                </svg>
+              </div>
+              <h3>Groupe de Jeunesse</h3>
+              <p>Un espace pour grandir dans la foi, partager et s’engager ensemble.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PASTOR -->
+      <section class="pastor-wrapper section-light">
+        <div class="container">
+          <div class="pastor-section">
+            <div class="pastor-image">
+              <img src="images/Pastor1.jpg" alt="Pasteur Martin MFUAMBA MUAMBA" />
+            </div>
+
+            <div class="pastor-content">
+              <h2>Notre Pasteur — Pasteur Martin MFUAMBA MUAMBA</h2>
+              <p class="pastor-role"><strong>Pasteur Principal</strong></p>
+              <p>
+                Le pasteur Martin MFUAMBA MUAMBA conduit l’église avec dévouement, foi et fidélité à
+                la Parole de Dieu. Son ministère est marqué par l’enseignement biblique,
+                l’accompagnement spirituel et le service envers la communauté.
+              </p>
+
+              <a href="pasteur.html" class="btn-primary">En savoir plus</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact-wrapper">
+        <div class="container">
+          <h2>Rejoignez-Nous</h2>
+
+          <div class="contact-section">
+            <div class="map-container">
+              <iframe
+                src="https://maps.google.com/maps?q=Stationsstraat%201%2C%201601%20Ruisbroek%2C%20Belgique&amp;output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+                title="Carte Google Maps de l'église"></iframe>
+            </div>
+
+            <div class="contact-form-block">
+              <p class="contact-address">
+                📍 1, Stationsstraat - 1601 Ruisbroek, Brussels, Belgium
+              </p>
+
+              <form id="contact-form" class="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom" required />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required />
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" name="email" placeholder="Email" required>
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Message" required></textarea>
                 </div>
-              </div>
 
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" placeholder="Message" required></textarea>
-              </div>
+                <button type="submit" class="form-submit">Préparer mon e-mail</button>
+                <p id="contact-status" role="status">
+                  Ce formulaire ouvre votre messagerie. Le message sera envoyé lorsque vous le
+                  validerez dans celle-ci.
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <button type="submit" class="form-submit">Préparer mon e-mail</button><p id="contact-status" role="status">Ce formulaire ouvre votre messagerie. Le message sera envoyé lorsque vous le validerez dans celle-ci.</p>
-            </form>
+      <section id="don" class="light-bg">
+        <div class="container donation">
+          <h2>Soutenir l’église</h2>
+          <p>
+            Pour connaître les modalités de don, contactez directement l’église ou
+            <a href="donner.html">faites votre don en cliquant ici</a>
+            .
+          </p>
+          <a class="btn-primary" href="#contact">Nous contacter</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Coordonnées</h3>
+          <p>
+            <span class="footer-contact-icon">📍</span>
+            1, Stationsstraat - 1601
+          </p>
+          <p>
+            <span class="footer-contact-icon">📞</span>
+            +32-497 11 82 14
+          </p>
+          <p>
+            <span class="footer-contact-icon">✉️</span>
+            letempledupleinevangile@gmail.com
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Liens utiles</h3>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">Qui Sommes-Nous</a></li>
+            <li>
+              <a href="index.html#cultes-evenements">Cultes & Événements</a>
+            </li>
+            <li><a href="index.html#ministeres">Ministères</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Réseaux sociaux</h3>
+          <div class="footer-socials">
+            <a
+              href="https://www.facebook.com/share/1MmgVc2Duj/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook">
+              <img src="images/facebook_icon.png" alt="Facebook" />
+            </a>
+            <a
+              href="https://www.instagram.com/ltpevangile"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram">
+              <img src="images/Instagram_icon.png" alt="Instagram" />
+            </a>
+            <a
+              href="https://www.youtube.com/@ltpevangile"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube">
+              <img src="images/YouTube_23392.png" alt="YouTube" />
+            </a>
           </div>
         </div>
       </div>
-    </section>
 
-  <section id="don" class="light-bg"><div class="container donation"><h2>Soutenir l’église</h2><p>Pour connaître les modalités de don, contactez directement l’église ou <a href="donner.html">faites votre don en cliquant ici</a>.</p><a class="btn-primary" href="#contact">Nous contacter</a></div></section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-container">
-
-      <div class="footer-section">
-        <h3>Coordonnées</h3>
-        <p><span class="footer-contact-icon">📍</span> 1, Stationsstraat - 1601</p>
-        <p><span class="footer-contact-icon">📞</span> +32-497 11 82 14</p>
-        <p><span class="footer-contact-icon">✉️</span> letempledupleinevangile@gmail.com</p>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Le Temple du Plein Évangile. Tous droits réservés.</p>
       </div>
+    </footer>
 
-      <div class="footer-section">
-        <h3>Liens utiles</h3>
-        <ul>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="about.html">Qui Sommes-Nous</a></li>
-          <li><a href="index.html#cultes-evenements">Cultes & Événements</a></li>
-          <li><a href="index.html#ministeres">Ministères</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-section">
-        <h3>Réseaux sociaux</h3>
-        <div class="footer-socials">
-          <a href="https://www.facebook.com/share/1MmgVc2Duj/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <img src="images/facebook_icon.png" alt="Facebook">
-          </a>
-          <a href="https://www.instagram.com/ltpevangile" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <img src="images/Instagram_icon.png" alt="Instagram">
-          </a>
-          <a href="https://www.youtube.com/@ltpevangile" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-            <img src="images/YouTube_23392.png" alt="YouTube">
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2026 Le Temple du Plein Évangile. Tous droits réservés.</p>
-    </div>
-  </footer>
-
-  <script src="js/youtube-api.js"></script>
-  <script src="js/main.js"></script>
-</body>
+    <script src="js/youtube-api.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

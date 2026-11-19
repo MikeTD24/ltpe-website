@@ -5,76 +5,142 @@ const videoText = (text, vars) => window.ltpeI18n?.t(text, vars) || text;
 const videoLocale = () => window.ltpeI18n?.locale || 'fr-BE';
 let teachings = [];
 let visibleCount = PAGE_SIZE;
-const normalizeText = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const normalizeText = (value) =>
+  String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
 function escapeHTML(value) {
- return String(value || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  return String(value || '').replace(
+    /[&<>"']/g,
+    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]
+  );
 }
-function videoURL(id) { return `https://www.youtube.com/watch?v=${encodeURIComponent(id)}`; }
+function videoURL(id) {
+  return `https://www.youtube.com/watch?v=${encodeURIComponent(id)}`;
+}
 function formatDuration(value = '') {
- const m = /^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/.exec(value);
- if (!m) return '';
- return [m[1], m[1] ? String(Number(m[2] || 0)).padStart(2,'0') : String(Number(m[2] || 0)), String(Number(m[3] || 0)).padStart(2,'0')].filter(v => v !== undefined).join(':');
+  const m = /^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/.exec(value);
+  if (!m) return '';
+  return [
+    m[1],
+    m[1] ? String(Number(m[2] || 0)).padStart(2, '0') : String(Number(m[2] || 0)),
+    String(Number(m[3] || 0)).padStart(2, '0'),
+  ]
+    .filter((v) => v !== undefined)
+    .join(':');
 }
 function createSermonCard(video) {
- const title = escapeHTML(video.title), duration = formatDuration(video.duration);
- const date = new Date(video.publishedAt).toLocaleDateString(videoLocale(),{day:'numeric',month:'long',year:'numeric'});
- return `<article class="sermon-card"><a class="sermon-thumbnail" href="${videoURL(video.id)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHTML(videoText('Regarder : {title}',{title:video.title}))}"><img src="https://i.ytimg.com/vi/${video.id}/hqdefault.jpg" alt="" loading="lazy"><span class="play-button" aria-hidden="true">▶</span>${duration ? `<span class="video-duration">${duration}</span>` : ''}</a><div class="sermon-info"><h4 data-no-translate><a href="${videoURL(video.id)}" target="_blank" rel="noopener noreferrer">${title}</a></h4><p class="sermon-date">${escapeHTML(date)}</p></div></article>`;
+  const title = escapeHTML(video.title),
+    duration = formatDuration(video.duration);
+  const date = new Date(video.publishedAt).toLocaleDateString(videoLocale(), {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+  return `<article class="sermon-card"><a class="sermon-thumbnail" href="${videoURL(video.id)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHTML(videoText('Regarder : {title}', { title: video.title }))}"><img src="https://i.ytimg.com/vi/${video.id}/hqdefault.jpg" alt="" loading="lazy"><span class="play-button" aria-hidden="true">▶</span>${duration ? `<span class="video-duration">${duration}</span>` : ''}</a><div class="sermon-info"><h4 data-no-translate><a href="${videoURL(video.id)}" target="_blank" rel="noopener noreferrer">${title}</a></h4><p class="sermon-date">${escapeHTML(date)}</p></div></article>`;
 }
 function filteredTeachings(videos, search = '', category = '', sort = 'newest') {
- return videos.filter(video => {
-  const text = normalizeText(video.title + ' ' + video.description);
-  return text.includes(normalizeText(search)) && (!category || text.includes(normalizeText(category)));
- }).sort((a,b) => (sort === 'oldest' ? 1 : -1) * (new Date(a.publishedAt) - new Date(b.publishedAt)));
+  return videos
+    .filter((video) => {
+      const text = normalizeText(video.title + ' ' + video.description);
+      return (
+        text.includes(normalizeText(search)) &&
+        (!category || text.includes(normalizeText(category)))
+      );
+    })
+    .sort(
+      (a, b) => (sort === 'oldest' ? 1 : -1) * (new Date(a.publishedAt) - new Date(b.publishedAt))
+    );
 }
 function renderTeachings() {
- const container = document.getElementById('teachings-container');
- if (!container) return;
- const matches = filteredTeachings(teachings, document.getElementById('search-input').value, document.getElementById('filter-select').value, document.getElementById('sort-select').value);
- container.innerHTML = matches.length ? matches.slice(0,visibleCount).map(createSermonCard).join('') : `<p class="video-status">${videoText('Aucun enseignement ne correspond à votre recherche.')}</p>`;
- document.getElementById('results-status').textContent = videoText('{shown} sur {total} enseignements',{shown:Math.min(visibleCount,matches.length),total:matches.length});
- document.getElementById('load-more-btn').hidden = visibleCount >= matches.length;
+  const container = document.getElementById('teachings-container');
+  if (!container) return;
+  const matches = filteredTeachings(
+    teachings,
+    document.getElementById('search-input').value,
+    document.getElementById('filter-select').value,
+    document.getElementById('sort-select').value
+  );
+  container.innerHTML = matches.length
+    ? matches.slice(0, visibleCount).map(createSermonCard).join('')
+    : `<p class="video-status">${videoText('Aucun enseignement ne correspond à votre recherche.')}</p>`;
+  document.getElementById('results-status').textContent = videoText(
+    '{shown} sur {total} enseignements',
+    { shown: Math.min(visibleCount, matches.length), total: matches.length }
+  );
+  document.getElementById('load-more-btn').hidden = visibleCount >= matches.length;
 }
 async function initializeYouTube() {
- const container = document.getElementById('teachings-container') || document.getElementById('sermons-container');
- if (!container) return;
- container.innerHTML = '<p class="video-status" role="status">Chargement des prédications…</p>';
- try {
-  const response = await fetch('data/youtube-videos.json',{signal:AbortSignal.timeout(15000)});
-  if (!response.ok) throw new Error('Catalogue indisponible');
-  const data = await response.json();
-  teachings = (Array.isArray(data.videos) ? data.videos : []).filter(v => /^[a-zA-Z0-9_-]{11}$/.test(v.id) && v.title && Number.isFinite(Date.parse(v.publishedAt)));
-  if (!teachings.length) throw new Error('Catalogue vide');
-  teachings.sort((a,b) => new Date(b.publishedAt) - new Date(a.publishedAt));
-  if (document.getElementById('sermons-container')) { container.innerHTML = teachings.slice(0,3).map(createSermonCard).join(''); return; }
-  const latest = teachings[0], iframe = document.getElementById('latest-video');
-  iframe.src = `https://www.youtube-nocookie.com/embed/${latest.id}`;
-  iframe.hidden = false;
-  document.getElementById('latest-title').setAttribute('data-no-translate','');
-  document.getElementById('latest-description').setAttribute('data-no-translate','');
-  document.getElementById('latest-title').textContent = latest.title;
-  document.getElementById('latest-description').textContent = (latest.description || '').slice(0,240);
-  document.getElementById('latest-date').textContent = new Date(latest.publishedAt).toLocaleDateString(videoLocale());
-  document.getElementById('latest-link').href = videoURL(latest.id);
-  for (const id of ['search-input','filter-select','sort-select']) document.getElementById(id).addEventListener(id === 'search-input' ? 'input' : 'change',() => { visibleCount = PAGE_SIZE; renderTeachings(); });
-  document.getElementById('load-more-btn').addEventListener('click',() => { visibleCount += PAGE_SIZE; renderTeachings(); });
-  renderTeachings();
- } catch {
-  container.innerHTML = `<div class="video-status"><p>Retrouvez toutes nos prédications et nos directs sur la chaîne LTPE.</p><a href="${CHANNEL_URL}/videos" target="_blank" rel="noopener noreferrer">Voir les enseignements sur YouTube →</a></div>`;
-  const iframe = document.getElementById('latest-video');
-  if (iframe) {
-   iframe.hidden = true;
-   const placeholder = document.createElement('div');
-   placeholder.className = 'latest-placeholder';
-   placeholder.innerHTML = `<a href="${CHANNEL_URL}/videos" target="_blank" rel="noopener noreferrer">▶ Regarder les messages de LTPE</a>`;
-   iframe.parentElement.appendChild(placeholder);
+  const container =
+    document.getElementById('teachings-container') || document.getElementById('sermons-container');
+  if (!container) return;
+  container.innerHTML = '<p class="video-status" role="status">Chargement des prédications…</p>';
+  try {
+    const response = await fetch('data/youtube-videos.json', {
+      signal: AbortSignal.timeout(15000),
+    });
+    if (!response.ok) throw new Error('Catalogue indisponible');
+    const data = await response.json();
+    teachings = (Array.isArray(data.videos) ? data.videos : []).filter(
+      (v) =>
+        /^[a-zA-Z0-9_-]{11}$/.test(v.id) && v.title && Number.isFinite(Date.parse(v.publishedAt))
+    );
+    if (!teachings.length) throw new Error('Catalogue vide');
+    teachings.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+    if (document.getElementById('sermons-container')) {
+      container.innerHTML = teachings.slice(0, 3).map(createSermonCard).join('');
+      return;
+    }
+    const latest = teachings[0],
+      iframe = document.getElementById('latest-video');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${latest.id}`;
+    iframe.hidden = false;
+    document.getElementById('latest-title').setAttribute('data-no-translate', '');
+    document.getElementById('latest-description').setAttribute('data-no-translate', '');
+    document.getElementById('latest-title').textContent = latest.title;
+    document.getElementById('latest-description').textContent = (latest.description || '').slice(
+      0,
+      240
+    );
+    document.getElementById('latest-date').textContent = new Date(
+      latest.publishedAt
+    ).toLocaleDateString(videoLocale());
+    document.getElementById('latest-link').href = videoURL(latest.id);
+    for (const id of ['search-input', 'filter-select', 'sort-select'])
+      document
+        .getElementById(id)
+        .addEventListener(id === 'search-input' ? 'input' : 'change', () => {
+          visibleCount = PAGE_SIZE;
+          renderTeachings();
+        });
+    document.getElementById('load-more-btn').addEventListener('click', () => {
+      visibleCount += PAGE_SIZE;
+      renderTeachings();
+    });
+    renderTeachings();
+  } catch {
+    container.innerHTML = `<div class="video-status"><p>Retrouvez toutes nos prédications et nos directs sur la chaîne LTPE.</p><a href="${CHANNEL_URL}/videos" target="_blank" rel="noopener noreferrer">Voir les enseignements sur YouTube →</a></div>`;
+    const iframe = document.getElementById('latest-video');
+    if (iframe) {
+      iframe.hidden = true;
+      const placeholder = document.createElement('div');
+      placeholder.className = 'latest-placeholder';
+      placeholder.innerHTML = `<a href="${CHANNEL_URL}/videos" target="_blank" rel="noopener noreferrer">▶ Regarder les messages de LTPE</a>`;
+      iframe.parentElement.appendChild(placeholder);
+    }
   }
- }
 }
-document.addEventListener('DOMContentLoaded',initializeYouTube);
+document.addEventListener('DOMContentLoaded', initializeYouTube);
 
-document.addEventListener('ltpe:languagechange',() => {
- if (!teachings.length) return;
- const home = document.getElementById('sermons-container');
- if (home) home.innerHTML = teachings.slice(0,3).map(createSermonCard).join('');
- else { renderTeachings(); document.getElementById('latest-date').textContent = new Date(teachings[0].publishedAt).toLocaleDateString(videoLocale()); }
+document.addEventListener('ltpe:languagechange', () => {
+  if (!teachings.length) return;
+  const home = document.getElementById('sermons-container');
+  if (home) home.innerHTML = teachings.slice(0, 3).map(createSermonCard).join('');
+  else {
+    renderTeachings();
+    document.getElementById('latest-date').textContent = new Date(
+      teachings[0].publishedAt
+    ).toLocaleDateString(videoLocale());
+  }
 });
