@@ -1,5 +1,16 @@
 # Reprise du site LTPE — 17 novembre 2026
 
+## Langues et marché de Noël — 19 novembre 2026
+
+- Sélecteur **FR / NL / EN** sur les dix pages. La langue choisie est mémorisée dans le navigateur et transmise dans les liens (`?lang=nl`, par exemple).
+- Traductions locales dans `js/translations.js`, appliquées par `js/i18n.js` : textes, boutons, formulaires, navigation, descriptions des pages et libellés accessibles. Aucun service de traduction tiers ni clé supplémentaire.
+- Les noms officiels, coordonnées bancaires, titre du livre, titres/descriptions des vidéos et affiches originales sont conservés. Les dates, filtres et messages de l’interface vidéo suivent la langue du site.
+- Marché de Noël publié : samedi **28 novembre 2026 de 13:00 à 19:00**, dimanche **29 novembre de 13:30 à 18:00**, Stationsstraat 1, 1601 Ruisbroek. Petite restauration, articles de Noël et concert gratuit.
+- Les deux affiches FR et NL sont disponibles en entier et ouvrables séparément. Le programme écrit est disponible dans les trois langues.
+- Bandeau d’accueil défilant avec lien vers l’événement et bouton pause ; arrêt au survol et au clavier ; respect de la préférence de réduction des animations. Il se masque après la dernière session de l’événement (heure de Bruxelles).
+- **Pour ajouter un événement** : ajouter une entrée dans `data/events.json`, avec un identifiant unique, un titre FR/NL/EN, le lieu, les sessions (dates ISO avec fuseau), le programme et les chemins des affiches. Après publication, cette même source alimente la page Événements et le bandeau d’accueil. Ajouter au dictionnaire les nouveaux libellés de programme si nécessaire. Les événements terminés restent consultables dans les archives.
+- Tests DOM réussis sur les dix pages : changements FR/NL/EN répétés, retour au français, mémorisation, liens, champs du formulaire, résultats vidéo, affiches, dates et expiration de l’annonce. Syntaxe et chemins contrôlés. La préparation visuelle d’À propos reste l’étape suivante.
+
 ## Améliorations de l’accueil — 19 novembre 2026
 
 - Bouton Donner relié à `donner.html` sur toutes les pages : 2 Corinthiens 9 : 7, bénéficiaire L.TPE ASBL, IBAN BE24 0016 6583 3338, consigne de communication et remerciements. QR code à ajouter dès réception.

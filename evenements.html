@@ -8,6 +8,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Open+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/refinements.css">
+  <script src="js/translations.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/events.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -46,7 +49,13 @@
   </header>
   <main>
     <section class="page-intro"><div class="container"><p class="eyebrow">Le Temple du Plein Évangile</p><h1>Événements</h1><p>Les prochains rendez-vous de la communauté LTPE.</p></div></section>
-    <section><div class="container coming-soon"><div class="feature-icon"><svg class="section-icon" aria-hidden="true" focusable="false"><use href="images/icons.svg#events"></use></svg></div><h2>Nos prochains événements</h2><p>Les informations sur nos prochains événements seront bientôt disponibles ici.</p><p>Pour en savoir plus dès maintenant, contactez l’église. Nous serons heureux de vous renseigner.</p><div class="page-actions"><a href="index.html#contact" class="btn-primary">Nous contacter</a><a href="index.html#cultes-evenements" class="text-link">Consulter les horaires des cultes</a></div></div></section>
+    <section><div class="container" id="event-list">
+      <article class="event-detail" id="marche-noel-2026">
+        <div class="event-copy"><h2>Marché de Noël</h2><ul class="event-sessions"><li><time datetime="2026-11-28T13:00:00+01:00">Samedi 28 novembre 2026</time><strong>13:00 – 19:00</strong></li><li><time datetime="2026-11-29T13:30:00+01:00">Dimanche 29 novembre 2026</time><strong>13:30 – 18:00</strong></li></ul><h3>Lieu</h3><p>Stationsstraat 1, 1601 Ruisbroek</p><h3>Programme</h3><ul class="event-programme"><li>Petite restauration</li><li>Vente d’articles de Noël</li><li>Concert gratuit</li></ul></div>
+        <div class="event-posters"><figure><a href="images/Ltpe-Marché de Noêl-FR.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/Ltpe-Marché de Noêl-FR.jpeg" alt="Marché de Noël — Affiche en français" loading="lazy"></a><figcaption>Affiche en français</figcaption></figure><figure><a href="images/Ltpe-Marché de Noêl-NL.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/Ltpe-Marché de Noêl-NL.jpeg" alt="Marché de Noël — Affiche en néerlandais" loading="lazy"></a><figcaption>Affiche en néerlandais</figcaption></figure></div>
+        <p class="poster-note">Les affiches originales sont disponibles en français et en néerlandais.</p>
+      </article>
+    </div></section>
   </main>
   <footer class="site-footer">
     <div class="footer-container">

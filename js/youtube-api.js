@@ -1,6 +1,8 @@
 /* Public metadata only. API credentials stay in GitHub Actions. */
 const CHANNEL_URL = 'https://www.youtube.com/@ltpevangile';
 const PAGE_SIZE = 9;
+const videoText = (text, vars) => window.ltpeI18n?.t(text, vars) || text;
+const videoLocale = () => window.ltpeI18n?.locale || 'fr-BE';
 let teachings = [];
 let visibleCount = PAGE_SIZE;
 const normalizeText = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -15,8 +17,8 @@ function formatDuration(value = '') {
 }
 function createSermonCard(video) {
  const title = escapeHTML(video.title), duration = formatDuration(video.duration);
- const date = new Date(video.publishedAt).toLocaleDateString('fr-BE',{day:'numeric',month:'long',year:'numeric'});
- return `<article class="sermon-card"><a class="sermon-thumbnail" href="${videoURL(video.id)}" target="_blank" rel="noopener noreferrer" aria-label="Regarder : ${title}"><img src="https://i.ytimg.com/vi/${video.id}/hqdefault.jpg" alt="" loading="lazy"><span class="play-button" aria-hidden="true">▶</span>${duration ? `<span class="video-duration">${duration}</span>` : ''}</a><div class="sermon-info"><h4><a href="${videoURL(video.id)}" target="_blank" rel="noopener noreferrer">${title}</a></h4><p class="sermon-date">${escapeHTML(date)}</p></div></article>`;
+ const date = new Date(video.publishedAt).toLocaleDateString(videoLocale(),{day:'numeric',month:'long',year:'numeric'});
+ return `<article class="sermon-card"><a class="sermon-thumbnail" href="${videoURL(video.id)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHTML(videoText('Regarder : {title}',{title:video.title}))}"><img src="https://i.ytimg.com/vi/${video.id}/hqdefault.jpg" alt="" loading="lazy"><span class="play-button" aria-hidden="true">▶</span>${duration ? `<span class="video-duration">${duration}</span>` : ''}</a><div class="sermon-info"><h4 data-no-translate><a href="${videoURL(video.id)}" target="_blank" rel="noopener noreferrer">${title}</a></h4><p class="sermon-date">${escapeHTML(date)}</p></div></article>`;
 }
 function filteredTeachings(videos, search = '', category = '', sort = 'newest') {
  return videos.filter(video => {
@@ -28,8 +30,8 @@ function renderTeachings() {
  const container = document.getElementById('teachings-container');
  if (!container) return;
  const matches = filteredTeachings(teachings, document.getElementById('search-input').value, document.getElementById('filter-select').value, document.getElementById('sort-select').value);
- container.innerHTML = matches.length ? matches.slice(0,visibleCount).map(createSermonCard).join('') : '<p class="video-status">Aucun enseignement ne correspond à votre recherche.</p>';
- document.getElementById('results-status').textContent = `${Math.min(visibleCount,matches.length)} sur ${matches.length} enseignements`;
+ container.innerHTML = matches.length ? matches.slice(0,visibleCount).map(createSermonCard).join('') : `<p class="video-status">${videoText('Aucun enseignement ne correspond à votre recherche.')}</p>`;
+ document.getElementById('results-status').textContent = videoText('{shown} sur {total} enseignements',{shown:Math.min(visibleCount,matches.length),total:matches.length});
  document.getElementById('load-more-btn').hidden = visibleCount >= matches.length;
 }
 async function initializeYouTube() {
@@ -47,9 +49,11 @@ async function initializeYouTube() {
   const latest = teachings[0], iframe = document.getElementById('latest-video');
   iframe.src = `https://www.youtube-nocookie.com/embed/${latest.id}`;
   iframe.hidden = false;
+  document.getElementById('latest-title').setAttribute('data-no-translate','');
+  document.getElementById('latest-description').setAttribute('data-no-translate','');
   document.getElementById('latest-title').textContent = latest.title;
   document.getElementById('latest-description').textContent = (latest.description || '').slice(0,240);
-  document.getElementById('latest-date').textContent = new Date(latest.publishedAt).toLocaleDateString('fr-BE');
+  document.getElementById('latest-date').textContent = new Date(latest.publishedAt).toLocaleDateString(videoLocale());
   document.getElementById('latest-link').href = videoURL(latest.id);
   for (const id of ['search-input','filter-select','sort-select']) document.getElementById(id).addEventListener(id === 'search-input' ? 'input' : 'change',() => { visibleCount = PAGE_SIZE; renderTeachings(); });
   document.getElementById('load-more-btn').addEventListener('click',() => { visibleCount += PAGE_SIZE; renderTeachings(); });
@@ -67,3 +71,10 @@ async function initializeYouTube() {
  }
 }
 document.addEventListener('DOMContentLoaded',initializeYouTube);
+
+document.addEventListener('ltpe:languagechange',() => {
+ if (!teachings.length) return;
+ const home = document.getElementById('sermons-container');
+ if (home) home.innerHTML = teachings.slice(0,3).map(createSermonCard).join('');
+ else { renderTeachings(); document.getElementById('latest-date').textContent = new Date(teachings[0].publishedAt).toLocaleDateString(videoLocale()); }
+});
