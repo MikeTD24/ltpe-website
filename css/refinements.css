@@ -60,25 +60,35 @@ section {
   background-image: url('../images/Aboutp.jpg');
   background-position: center 40%;
 }
-.hero-teachings {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+.hero.hero-teachings {
+  display: flex;
   background: #1a2332;
-  min-height: 0;
-  padding: 0;
-  text-align: left;
+  min-height: 360px;
+  height: 54vw;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.hero-teachings::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  pointer-events: none;
 }
 
 .teachings-hero-photo {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
-  height: clamp(420px, 38vw, 650px);
-  object-fit: contain;
-  background: #202b35;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .hero-teachings .hero-content {
-  padding: 48px 36px;
+  padding: 0;
 }
 
 .teachings-pagination {
@@ -109,19 +119,12 @@ section {
 
 @media (max-width: 760px) {
   .hero.hero-teachings {
-    grid-template-columns: 1fr;
-    min-height: 0;
-    padding: 0;
-    text-align: center;
-  }
-
-  .teachings-hero-photo {
-    height: auto;
-    max-height: none;
+    height: 62vw;
+    min-height: 360px;
   }
 
   .hero-teachings .hero-content {
-    padding: 30px 20px;
+    padding: 0 8px;
   }
 }
 .hero h1 {
