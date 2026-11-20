@@ -122,7 +122,7 @@ La clé locale préexistante est conservée dans `.env.local`, ignoré par Git. 
 
 ## Enseignements et contrôle global — 20 novembre 2026
 
-- Bannière : photo sur toute la largeur, voile sombre et titre centré superposé, conformément au mockup. Cadrage ancré en haut et hauteur proportionnelle pour préserver la tête et la Bible dans la photo carrée.
+- Bannière : photo en costume bordeaux (`images/teachings-banner-2.png`), titre et message superposés. Hauteur limitée à 380–500 px sur ordinateur et 360 px sur mobile. Photo centrale sans déformation et fond flouté issu de la même image pour remplir la largeur sans couper le visage ou la Bible. La première proposition est conservée dans `images/teachings-banner-1.png`. Pour changer de photo, modifier à la fois la source dans `teachings.html` et le fond `.hero-teachings::before` dans `css/refinements.css`.
 - Recherche : titres uniquement, sans les descriptions YouTube qui répètent les horaires de tous les cultes. Les recherches « prière », « culte » et « étude » utilisent les catégories déduites des titres, avec variantes FR/NL/EN. Les titres génériques restent dans « Tous les enseignements ».
 - Pagination : « Charger plus » et « Charger moins » par groupes de neuf, avec maintien des filtres. Traductions FR/NL/EN conservées.
 - Tests : `node scripts/check-teachings.cjs` couvre les catégories, les descriptions trompeuses, les recherches multilingues, le tri et l’échappement HTML. Vérifications DOM complémentaires des treize pages et du catalogue réel : langues, liens, événements et pagination.
