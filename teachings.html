@@ -2,6 +2,10 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://i.ytimg.com data:; connect-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'none'; form-action mailto:; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Enseignements - Le Temple du Plein Évangile" />
     <title>Enseignements - Le Temple du Plein Évangile</title>
@@ -64,7 +68,10 @@
     <!-- HERO SECTION -->
     <main>
       <section class="hero hero-teachings">
-        <div class="hero-overlay"></div>
+        <img
+          class="teachings-hero-photo"
+          src="images/Pastor3.jpeg"
+          alt="Le pasteur Martin MFUAMBA MUAMBA enseigne, la Bible ouverte sur le pupitre" />
         <div class="hero-content">
           <h1>Enseignements</h1>
           <p>Découvrez nos prédications et enseignements bibliques</p>
@@ -123,6 +130,7 @@
               <input
                 type="search"
                 id="search-input"
+                aria-describedby="search-help"
                 placeholder="Rechercher un enseignement..."
                 style="
                   padding: 0.75rem;
@@ -151,6 +159,10 @@
               </select>
             </label>
           </div>
+          <p id="search-help" class="search-help">
+            Recherche dans les titres des vidéos. Les catégories sont déterminées à partir de ces
+            titres.
+          </p>
 
           <!-- SERMONS GRID -->
           <div class="sermons-grid" id="teachings-container" aria-live="polite">
@@ -160,7 +172,24 @@
           <!-- PAGINATION -->
           <div style="text-align: center; margin-top: 3rem">
             <p id="results-status" role="status"></p>
-            <button hidden id="load-more-btn" class="btn-primary">Charger plus</button>
+            <div class="teachings-pagination">
+              <button
+                hidden
+                id="load-more-btn"
+                class="btn-primary"
+                type="button"
+                aria-controls="teachings-container">
+                Charger plus
+              </button>
+              <button
+                hidden
+                id="load-less-btn"
+                class="btn-outline"
+                type="button"
+                aria-controls="teachings-container">
+                Charger moins
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -173,7 +202,8 @@
           <a
             href="https://www.youtube.com/@ltpevangile?sub_confirmation=1"
             target="_blank"
-            class="cta-btn-primary">
+            class="cta-btn-primary"
+            rel="noopener noreferrer">
             S'abonner sur YouTube
           </a>
         </div>

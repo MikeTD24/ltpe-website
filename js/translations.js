@@ -1,5 +1,16 @@
 /* Editorial translations. Names, bank details, book and YouTube titles stay original. */
 window.LTPE_TRANSLATIONS = [
+  ['Charger moins', 'Minder tonen', 'Show fewer'],
+  [
+    'Recherche dans les titres des vidéos. Les catégories sont déterminées à partir de ces titres.',
+    'Zoeken in videotitels. De categorieën worden op basis van die titels bepaald.',
+    'Search video titles. Categories are determined from those titles.',
+  ],
+  [
+    'Le pasteur Martin MFUAMBA MUAMBA enseigne, la Bible ouverte sur le pupitre',
+    'Voorganger Martin MFUAMBA MUAMBA onderwijst met de Bijbel open op de lessenaar',
+    'Pastor Martin MFUAMBA MUAMBA teaching with the Bible open on the lectern',
+  ],
   ['Groupe des Femmes', 'Vrouwengroep', 'Women’s group'],
   ['Groupe des Hommes', 'Mannengroep', 'Men’s group'],
   [

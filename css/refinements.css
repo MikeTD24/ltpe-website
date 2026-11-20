@@ -61,9 +61,68 @@ section {
   background-position: center 40%;
 }
 .hero-teachings {
-  background-image: url('../images/Pastor3.jpeg');
-  background-position: center 35%;
-  min-height: 420px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  background: #1a2332;
+  min-height: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.teachings-hero-photo {
+  display: block;
+  width: 100%;
+  height: clamp(420px, 38vw, 650px);
+  object-fit: contain;
+  background: #202b35;
+}
+
+.hero-teachings .hero-content {
+  padding: 48px 36px;
+}
+
+.teachings-pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.btn-outline {
+  border: 2px solid #795a18;
+  border-radius: 999px;
+  color: #795a18;
+  background: white;
+  padding: 0.85rem 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: #f4f0e6;
+}
+
+.search-help {
+  font-size: 0.9rem;
+  margin-top: -12px;
+}
+
+@media (max-width: 760px) {
+  .hero.hero-teachings {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .teachings-hero-photo {
+    height: auto;
+    max-height: none;
+  }
+
+  .hero-teachings .hero-content {
+    padding: 30px 20px;
+  }
 }
 .hero h1 {
   font-size: clamp(2.2rem, 4.2vw, 4rem);

@@ -120,6 +120,27 @@ Les fichiers sont modifiés localement, sans commit, push ou publication pendant
 
 La clé locale préexistante est conservée dans `.env.local`, ignoré par Git. Le script ne charge pas automatiquement ce fichier : il lit une variable d’environnement. Aucun secret n’est inclus dans le paquet Pages.
 
+## Enseignements et contrôle global — 20 novembre 2026
+
+- Bannière : photo complète du pasteur avec Bible et pupitre, séparée du titre pour conserver le cadrage sur petit et grand écran.
+- Recherche : titres uniquement, sans les descriptions YouTube qui répètent les horaires de tous les cultes. Les recherches « prière », « culte » et « étude » utilisent les catégories déduites des titres, avec variantes FR/NL/EN. Les titres génériques restent dans « Tous les enseignements ».
+- Pagination : « Charger plus » et « Charger moins » par groupes de neuf, avec maintien des filtres. Traductions FR/NL/EN conservées.
+- Tests : `node scripts/check-teachings.cjs` couvre les catégories, les descriptions trompeuses, les recherches multilingues, le tri et l’échappement HTML. Vérifications DOM complémentaires des treize pages et du catalogue réel : langues, liens, événements et pagination.
+
+### Sécurité : portée et limites du contrôle
+
+- Aucun secret YouTube dans les fichiers publics actuels ; clé de synchronisation conservée dans Actions. L’ancienne clé invalide reste dans l’historique Git : ne pas la réactiver ni la réutiliser.
+- Ajout d’une politique CSP dans chaque document : scripts locaux seulement, connexions locales, intégrations YouTube et Google Maps autorisées, objets et balise base interdits. Les styles intégrés restent autorisés pour les mises en page existantes.
+- Politique de référent ajoutée ; liens externes en nouvel onglet protégés ; identifiants YouTube validés et titres échappés avant insertion HTML.
+- Le formulaire prépare un e-mail, sans envoi automatique ni stockage serveur. Son repli sans JavaScript évite les coordonnées dans l’URL.
+- Actions GitHub figées sur des SHA, temps d’exécution limité et publication après synchronisation restreinte à la branche par défaut. Fréquence de synchronisation inchangée : six heures.
+- HTTPS et HSTS constatés sur Pages ; fichiers `.env.local`, `.git/config` et ancien fichier de clé inaccessibles aux URL vérifiées. Le paquet public exclut outils locaux, documentation et configuration privée.
+- Ce contrôle du code, de la configuration et des comportements n’est pas un test d’intrusion exhaustif. Les réglages du compte GitHub (dont 2FA) et ceux de Google Cloud ne sont pas audités ici.
+- Une CSP par balise meta ne remplace pas tous les en-têtes serveur : par exemple `frame-ancestors` exige un en-tête HTTP. Un hébergement/proxy configurable permettrait ces protections supplémentaires.
+- Le site actuel est public, sans espace administrateur ni données privées. Un guard Angular ne protège pas les données côté serveur ; une future zone privée devra utiliser une authentification et des autorisations vérifiées côté serveur.
+
+Références : [Angular — route guards](https://angular.dev/guide/routing/route-guards), [MDN — CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP), [GitHub — sécuriser Actions](https://docs.github.com/en/actions/reference/security/secure-use).
+
 ## Aperçu local
 
 Depuis le dossier du projet :
