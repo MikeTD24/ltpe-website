@@ -31,6 +31,7 @@ jobs:
         run: |
           mkdir -p _site
           cp -- *.html _site/
+          cp sitemap.xml robots.txt _site/
           cp -R css js images data _site/
           rm -f _site/images/Homepage.png _site/images/Aboutpage.png _site/images/Teachingspage.png
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3

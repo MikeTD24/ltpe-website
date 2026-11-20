@@ -1,0 +1,161 @@
+{
+  "base_url": "https://miketd24.github.io/ltpe-website/",
+  "pages": {
+    "index.html": {
+      "titles": [
+        "LTPE — Église évangélique à Ruisbroek",
+        "LTPE — Evangelische kerk in Ruisbroek",
+        "LTPE — Evangelical church in Ruisbroek"
+      ],
+      "descriptions": [
+        "Bienvenue au Temple du Plein Évangile à Ruisbroek, en Belgique. Découvrez nos cultes, réunions de prière, enseignements et la vie de notre communauté.",
+        "Welkom bij Le Temple du Plein Évangile in Ruisbroek, België. Ontdek onze diensten, gebedsbijeenkomsten, Bijbelonderwijs en het leven van onze gemeenschap.",
+        "Welcome to Le Temple du Plein Évangile in Ruisbroek, Belgium. Discover our services, prayer meetings, Bible teaching and community life."
+      ]
+    },
+    "about.html": {
+      "titles": [
+        "Notre histoire et notre équipe pastorale — LTPE Ruisbroek",
+        "Onze geschiedenis en ons pastorale team — LTPE Ruisbroek",
+        "Our history and pastoral team — LTPE Ruisbroek"
+      ],
+      "descriptions": [
+        "Découvrez l’histoire du Temple du Plein Évangile depuis 2012, notre foi, nos valeurs et notre équipe pastorale à Ruisbroek.",
+        "Ontdek de geschiedenis van Le Temple du Plein Évangile sinds 2012, ons geloof, onze waarden en ons pastorale team in Ruisbroek.",
+        "Discover the history of Le Temple du Plein Évangile since 2012, our faith, values and pastoral team in Ruisbroek."
+      ]
+    },
+    "teachings.html": {
+      "titles": [
+        "Prédications et études bibliques — LTPE Ruisbroek",
+        "Preken en Bijbelstudies — LTPE Ruisbroek",
+        "Sermons and Bible studies — LTPE Ruisbroek"
+      ],
+      "descriptions": [
+        "Retrouvez les prédications, études bibliques et réunions de prière de LTPE. Recherchez les vidéos de notre chaîne YouTube et regardez les derniers messages.",
+        "Bekijk preken, Bijbelstudies en gebedsbijeenkomsten van LTPE. Zoek in de video's van ons YouTube-kanaal en bekijk de nieuwste boodschappen.",
+        "Explore LTPE sermons, Bible studies and prayer meetings. Search videos from our YouTube channel and watch the latest messages."
+      ]
+    },
+    "evenements.html": {
+      "titles": [
+        "Événements de l’église — LTPE Ruisbroek",
+        "Kerkactiviteiten — LTPE Ruisbroek",
+        "Church events — LTPE Ruisbroek"
+      ],
+      "descriptions": [
+        "Consultez les événements de LTPE à Ruisbroek : dates, horaires, lieu et informations pratiques pour participer aux rendez-vous de notre communauté.",
+        "Ontdek de activiteiten van LTPE in Ruisbroek: data, tijden, locatie en praktische informatie om deel te nemen aan onze gemeenschapsactiviteiten.",
+        "Discover LTPE events in Ruisbroek: dates, times, location and practical information for joining our community gatherings."
+      ]
+    },
+    "donner.html": {
+      "titles": [
+        "Soutenir notre église — LTPE Ruisbroek",
+        "Steun onze kerk — LTPE Ruisbroek",
+        "Support our church — LTPE Ruisbroek"
+      ],
+      "descriptions": [
+        "Découvrez comment soutenir Le Temple du Plein Évangile. Retrouvez les coordonnées bancaires de l’église et les modalités pour faire un don.",
+        "Ontdek hoe u Le Temple du Plein Évangile kunt steunen. Vind de bankgegevens van de kerk en informatie om een gift te doen.",
+        "Find out how to support Le Temple du Plein Évangile, including the church's bank details and information about giving."
+      ]
+    },
+    "pasteur.html": {
+      "titles": [
+        "Pasteur Martin MFUAMBA MUAMBA — LTPE Ruisbroek",
+        "Voorganger Martin MFUAMBA MUAMBA — LTPE Ruisbroek",
+        "Pastor Martin MFUAMBA MUAMBA — LTPE Ruisbroek"
+      ],
+      "descriptions": [
+        "Découvrez le parcours du pasteur Martin MFUAMBA MUAMBA, responsable de l’assemblée depuis 2012, son ministère et son livre.",
+        "Ontdek het verhaal van voorganger Martin MFUAMBA MUAMBA, leider van de gemeente sinds 2012, zijn bediening en zijn boek.",
+        "Discover Pastor Martin MFUAMBA MUAMBA's background, his leadership of the congregation since 2012, his ministry and his book."
+      ]
+    },
+    "ecodim.html": {
+      "titles": [
+        "ECODIM : grandir dans la foi — LTPE Ruisbroek",
+        "ECODIM: groeien in geloof — LTPE Ruisbroek",
+        "ECODIM: growing in faith — LTPE Ruisbroek"
+      ],
+      "descriptions": [
+        "Découvrez ECODIM, le département des enfants de LTPE à Ruisbroek, pour découvrir la Bible et grandir ensemble dans la foi.",
+        "Ontdek ECODIM, de kinderafdeling van LTPE in Ruisbroek, om de Bijbel te ontdekken en samen te groeien in geloof.",
+        "Discover ECODIM, LTPE's children's ministry in Ruisbroek, where children explore the Bible and grow together in faith."
+      ]
+    },
+    "louange.html": {
+      "titles": [
+        "Groupe de louange — LTPE Ruisbroek",
+        "Lofprijzingsgroep — LTPE Ruisbroek",
+        "Worship group — LTPE Ruisbroek"
+      ],
+      "descriptions": [
+        "Découvrez le groupe de louange du Temple du Plein Évangile à Ruisbroek : célébrer Dieu ensemble par le chant et la musique.",
+        "Ontdek de lofprijzingsgroep van Le Temple du Plein Évangile in Ruisbroek: samen God eren met zang en muziek.",
+        "Discover the worship group at Le Temple du Plein Évangile in Ruisbroek, celebrating God together through singing and music."
+      ]
+    },
+    "priere.html": {
+      "titles": [
+        "Groupe de prière — LTPE Ruisbroek",
+        "Gebedsgroep — LTPE Ruisbroek",
+        "Prayer group — LTPE Ruisbroek"
+      ],
+      "descriptions": [
+        "Découvrez le groupe de prière de LTPE à Ruisbroek : partager nos sujets de prière, intercéder et grandir ensemble dans la foi.",
+        "Ontdek de gebedsgroep van LTPE in Ruisbroek: gebedspunten delen, voorbede doen en samen groeien in geloof.",
+        "Discover LTPE's prayer group in Ruisbroek: sharing prayer requests, interceding and growing together in faith."
+      ]
+    },
+    "logistique.html": {
+      "titles": [
+        "Groupe logistique — LTPE Ruisbroek",
+        "Logistiek team — LTPE Ruisbroek",
+        "Logistics team — LTPE Ruisbroek"
+      ],
+      "descriptions": [
+        "Découvrez le groupe logistique de LTPE à Ruisbroek et son service pour accompagner les rencontres et la vie de notre église.",
+        "Ontdek het logistieke team van LTPE in Ruisbroek en zijn inzet voor de bijeenkomsten en het leven van onze kerk.",
+        "Discover LTPE's logistics team in Ruisbroek and its service supporting our gatherings and church community life."
+      ]
+    },
+    "jeunesse.html": {
+      "titles": [
+        "Groupe de jeunesse — LTPE Ruisbroek",
+        "Jongerengroep — LTPE Ruisbroek",
+        "Youth group — LTPE Ruisbroek"
+      ],
+      "descriptions": [
+        "Découvrez le groupe de jeunesse de LTPE à Ruisbroek : vivre la foi, partager et grandir ensemble au sein de notre communauté.",
+        "Ontdek de jongerengroep van LTPE in Ruisbroek: samen het geloof beleven, delen en groeien binnen onze gemeenschap.",
+        "Discover LTPE's youth group in Ruisbroek: sharing faith and growing together within our community."
+      ]
+    },
+    "femmes.html": {
+      "titles": [
+        "Groupe des femmes — LTPE Ruisbroek",
+        "Vrouwengroep — LTPE Ruisbroek",
+        "Women's group — LTPE Ruisbroek"
+      ],
+      "descriptions": [
+        "Découvrez le groupe des femmes de LTPE à Ruisbroek : des liens fraternels, la prière et l’encouragement pour grandir ensemble dans la foi.",
+        "Ontdek de vrouwengroep van LTPE in Ruisbroek: verbondenheid, gebed en bemoediging om samen te groeien in geloof.",
+        "Discover LTPE's women's group in Ruisbroek: fellowship, prayer and encouragement to grow together in faith."
+      ]
+    },
+    "hommes.html": {
+      "titles": [
+        "Groupe des hommes — LTPE Ruisbroek",
+        "Mannengroep — LTPE Ruisbroek",
+        "Men's group — LTPE Ruisbroek"
+      ],
+      "descriptions": [
+        "Découvrez le groupe des hommes de LTPE à Ruisbroek : partager la foi, s’encourager et servir ensemble dans la vie de l’église.",
+        "Ontdek de mannengroep van LTPE in Ruisbroek: het geloof delen, elkaar bemoedigen en samen dienen in de kerk.",
+        "Discover LTPE's men's group in Ruisbroek: sharing faith, encouraging one another and serving together in church life."
+      ]
+    }
+  }
+}

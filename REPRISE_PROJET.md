@@ -141,6 +141,28 @@ La clé locale préexistante est conservée dans `.env.local`, ignoré par Git. 
 
 Références : [Angular — route guards](https://angular.dev/guide/routing/route-guards), [MDN — CSP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP), [GitHub — sécuriser Actions](https://docs.github.com/en/actions/reference/security/secure-use).
 
+## Référencement et domaine OVHcloud
+
+Le mail du 20 novembre confirme les serveurs DNS OVHcloud, pas le raccordement à Pages. Le résolveur public interrogé ne trouvait pas encore `ltpe.be` et `www.ltpe.be` au moment du contrôle. Ne pas commander de nouveau domaine.
+
+- Titres et descriptions propres aux treize pages, rédigés en FR/NL/EN et mentionnant Ruisbroek quand pertinent.
+- URL canoniques et liens réciproques `hreflang` FR/NL/EN avec repli français. Les versions linguistiques gardent les URL existantes `?lang=fr`, `?lang=nl` et `?lang=en`.
+- Métadonnées Open Graph et carte de partage, avec photo de l’assemblée. La version HTML initiale est française ; les robots sociaux qui ne lancent pas JavaScript voient cet aperçu français.
+- `sitemap.xml` contient les 39 URL linguistiques. `robots.txt` et sitemap sont inclus dans le paquet Pages. Sur l’hébergement actuel dans un sous-chemin, le `robots.txt` du projet n’est pas celui de la racine du domaine github.io : soumettre le sitemap directement dans Search Console. Après raccordement du domaine propre, il sera à la racine du domaine.
+- Aucune redirection, modification DNS ou inscription Search Console effectuée pendant cette préparation. Aucun suivi publicitaire ajouté.
+
+### Régénérer les métadonnées
+
+La source est `scripts/seo.json`. Conserver l’adresse GitHub actuellement fonctionnelle dans `base_url` jusqu’à validation du domaine propre et de son HTTPS. Exécuter ensuite `python scripts/build-seo.py` puis formater les HTML, `js/seo.js` et le JSON avec Prettier avant publication. Le générateur ne nécessite que Python et ne charge aucune clé.
+
+Au passage à `https://www.ltpe.be/`, modifier `base_url`, régénérer puis publier. Vérifier le domaine dans GitHub avant d’orienter la zone DNS vers Pages ; préserver les entrées de messagerie. Contrôler les deux adresses avec/sans www et HTTPS avant de déclarer le sitemap final à Google Search Console.
+
+### Limites et suite
+
+Les traductions restent rendues par JavaScript ; l’affichage et les métadonnées des 39 URL ont été contrôlés en DOM, mais pas leur indexation réelle par Google. Une génération HTML statique par langue rendrait aussi les traductions disponibles sans JavaScript et constitue une amélioration ultérieure. Les cartes des réseaux sociaux restent en français sans exécution de JavaScript. L’ajout de données structurées fiables, l’optimisation du poids des grandes photos et l’examen d’une éventuelle fiche locale existante pourront compléter cette première passe. Ne pas créer de doublon de fiche.
+
+Search Console demande une validation de propriété et reste à connecter avec le propriétaire. Ne pas promettre de classement ni d’indexation automatique. Références : [Google — versions linguistiques](https://developers.google.com/search/docs/specialty/international/localized-versions), [Google — URL canoniques](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls).
+
 ## Aperçu local
 
 Depuis le dossier du projet :
