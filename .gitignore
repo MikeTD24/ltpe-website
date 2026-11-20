@@ -36,3 +36,9 @@ __pycache__/
 # API Keys (NEVER commit these!)
 config/keys.js
 config/api-keys.json
+
+# Original photos kept locally; the site uses its prepared assets.
+/images/Frère BAMPALE.png
+/images/Frère BAMPALE2.png
+/images/Ltpe Bannière 1
+/images/Ltpe Bannière 2
