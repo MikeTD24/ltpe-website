@@ -407,7 +407,7 @@ section {
   background: white;
   flex-shrink: 0;
 }
-.language-switch button {
+.language-switch a {
   border: 0;
   border-radius: 20px;
   color: #374151;
@@ -417,12 +417,15 @@ section {
   padding: 6px 8px;
   cursor: pointer;
   min-height: 34px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
 }
-.language-switch button[aria-pressed='true'] {
+.language-switch a[aria-current='page'] {
   background: #795a18;
   color: white;
 }
-.language-switch button:hover {
+.language-switch a:hover {
   background: #eee9dc;
   color: #473710;
 }

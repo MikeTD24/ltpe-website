@@ -146,20 +146,25 @@ Références : [Angular — route guards](https://angular.dev/guide/routing/rout
 Le mail du 20 novembre confirme les serveurs DNS OVHcloud, pas le raccordement à Pages. Le résolveur public interrogé ne trouvait pas encore `ltpe.be` et `www.ltpe.be` au moment du contrôle. Ne pas commander de nouveau domaine.
 
 - Titres et descriptions propres aux treize pages, rédigés en FR/NL/EN et mentionnant Ruisbroek quand pertinent.
-- URL canoniques et liens réciproques `hreflang` FR/NL/EN avec repli français. Les versions linguistiques gardent les URL existantes `?lang=fr`, `?lang=nl` et `?lang=en`.
-- Métadonnées Open Graph et carte de partage, avec photo de l’assemblée. La version HTML initiale est française ; les robots sociaux qui ne lancent pas JavaScript voient cet aperçu français.
+- Depuis le 21 novembre : 39 pages HTML statiques dans `/fr/`, `/nl/` et `/en/`, avec contenu, métadonnées et liens de langue disponibles sans JavaScript. Les titres YouTube, noms propres, coordonnées et références bibliographiques gardent leur forme originale.
+- Les pages racines restent accessibles comme alias français avec une URL canonique `/fr/`. Les anciens liens `?lang=nl` et `?lang=en` redirigent côté navigateur vers la nouvelle page de langue lorsque JavaScript est actif.
+- URL canoniques et liens réciproques `hreflang` FR/NL/EN avec repli français. Les cartes de partage sont maintenant localisées directement dans le HTML.
 - `sitemap.xml` contient les 39 URL linguistiques. `robots.txt` et sitemap sont inclus dans le paquet Pages. Sur l’hébergement actuel dans un sous-chemin, le `robots.txt` du projet n’est pas celui de la racine du domaine github.io : soumettre le sitemap directement dans Search Console. Après raccordement du domaine propre, il sera à la racine du domaine.
-- Aucune redirection, modification DNS ou inscription Search Console effectuée pendant cette préparation. Aucun suivi publicitaire ajouté.
+- Aucune modification DNS ni inscription Search Console effectuée pendant cette préparation. Aucun suivi publicitaire ajouté. Les redirections de compatibilité concernent uniquement les anciennes URL de langue.
 
 ### Régénérer les métadonnées
 
-La source est `scripts/seo.json`. Conserver l’adresse GitHub actuellement fonctionnelle dans `base_url` jusqu’à validation du domaine propre et de son HTTPS. Exécuter ensuite `python scripts/build-seo.py` puis formater les HTML, `js/seo.js` et le JSON avec Prettier avant publication. Le générateur ne nécessite que Python et ne charge aucune clé.
+Les sources éditoriales restent les treize HTML à la racine, `js/translations.js`, `scripts/seo.json` et les catalogues JSON. Ne pas modifier les fichiers générés dans `dist/`. Le générateur `scripts/build-site.cjs` partage les CSS, scripts et images ; il génère aussi le sitemap et les alias des anciennes pages. Les originaux ignorés ne sont pas copiés : seuls les fichiers publics suivis par Git sont admis dans l’artifact.
+
+Installer Node.js 22 ou supérieur, puis lancer `npm ci --ignore-scripts`, `npm run build` et `npm test`. Le verrouillage `package-lock.json` est versionné. GitHub Actions exécute automatiquement cette génération et les tests avant chaque déploiement, y compris après les synchronisations YouTube toutes les six heures. Aucune clé n’est nécessaire à la génération.
+
+Conserver l’adresse GitHub actuellement fonctionnelle dans `base_url` jusqu’à validation du domaine propre et de son HTTPS. Le sitemap est généré pour cette adresse à chaque publication.
 
 Au passage à `https://www.ltpe.be/`, modifier `base_url`, régénérer puis publier. Vérifier le domaine dans GitHub avant d’orienter la zone DNS vers Pages ; préserver les entrées de messagerie. Contrôler les deux adresses avec/sans www et HTTPS avant de déclarer le sitemap final à Google Search Console.
 
 ### Limites et suite
 
-Les traductions restent rendues par JavaScript ; l’affichage et les métadonnées des 39 URL ont été contrôlés en DOM, mais pas leur indexation réelle par Google. Une génération HTML statique par langue rendrait aussi les traductions disponibles sans JavaScript et constitue une amélioration ultérieure. Les cartes des réseaux sociaux restent en français sans exécution de JavaScript. L’ajout de données structurées fiables, l’optimisation du poids des grandes photos et l’examen d’une éventuelle fiche locale existante pourront compléter cette première passe. Ne pas créer de doublon de fiche.
+Le contenu traduit, les événements et les premières vidéos sont prérendus lors de la génération. JavaScript apporte ensuite l’actualisation des événements, la recherche, les filtres et la pagination YouTube. Le changement de langue utilise une navigation réelle et ne dépend plus du stockage local ; l’URL choisie est prioritaire. L’indexation réelle reste à contrôler avec Google. L’ajout de données structurées fiables, l’optimisation du poids des grandes photos et l’examen d’une éventuelle fiche locale existante pourront compléter cette première passe. Ne pas créer de doublon de fiche.
 
 Search Console demande une validation de propriété et reste à connecter avec le propriétaire. Ne pas promettre de classement ni d’indexation automatique. Références : [Google — versions linguistiques](https://developers.google.com/search/docs/specialty/international/localized-versions), [Google — URL canoniques](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls).
 
@@ -168,10 +173,11 @@ Search Console demande une validation de propriété et reste à connecter avec 
 Depuis le dossier du projet :
 
 ```powershell
-python -m http.server 8765 --bind 127.0.0.1
+npm run build
+python -m http.server 8765 --bind 127.0.0.1 --directory dist
 ```
 
-Ouvrir http://127.0.0.1:8765/index.html. Arrêter le serveur avec Ctrl+C. Éviter l’ouverture directe en `file://` : le navigateur peut empêcher la lecture du catalogue JSON.
+Ouvrir http://127.0.0.1:8765/fr/index.html, puis les versions `/nl/` et `/en/`. Arrêter le serveur avec Ctrl+C. Éviter l’ouverture directe en `file://` : le navigateur peut empêcher la lecture du catalogue JSON.
 
 ## Vérification
 

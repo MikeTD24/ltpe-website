@@ -8,11 +8,17 @@
   const states = new WeakMap(),
     attrStates = new WeakMap();
   const query = new URLSearchParams(location.search).get('lang');
-  let saved;
-  try {
-    saved = localStorage.getItem('ltpe-language');
-  } catch {}
-  let language = supported.includes(query) ? query : supported.includes(saved) ? saved : 'fr';
+  const script = document.querySelector('script[src$="js/i18n.js"]');
+  const siteRoot = new URL('../', script ? script.src : new URL('js/i18n.js', location.href));
+  const staticLanguage = document.documentElement.dataset.staticLanguage;
+  const filename = location.pathname.split('/').pop() || 'index.html';
+  window.ltpeSiteURL = (path) => new URL(path, siteRoot).href;
+  function languageURL(code, page = filename) {
+    const url = new URL(`${code}/${page}`, siteRoot);
+    url.hash = location.hash;
+    return url;
+  }
+  let language = staticLanguage || (supported.includes(query) ? query : 'fr');
   function t(source, variables = {}) {
     const normalized = normalize(source),
       row = dictionary.get(normalized);
@@ -92,40 +98,41 @@
       if (!href || href.startsWith('#')) continue;
       const url = new URL(href, location.href);
       if (url.origin !== location.origin || !url.pathname.endsWith('.html')) continue;
-      url.searchParams.set('lang', language);
-      link.setAttribute('href', url.pathname.split('/').pop() + url.search + url.hash);
+      if (link.closest('.language-switch')) continue;
+      const target = languageURL(language, url.pathname.split('/').pop());
+      target.hash = url.hash;
+      link.setAttribute('href', target.href);
     }
   }
-  const switcher = document.createElement('div');
+  const switcher = document.querySelector('.language-switch') || document.createElement('div');
   switcher.className = 'language-switch';
   switcher.setAttribute('role', 'group');
+  switcher.replaceChildren();
   for (const code of supported) {
-    const button = document.createElement('button');
-    button.type = 'button';
+    const button = document.createElement('a');
     button.lang = code;
     button.textContent = code.toUpperCase();
+    button.href = languageURL(code).href;
     button.setAttribute('aria-label', { fr: 'Français', nl: 'Nederlands', en: 'English' }[code]);
-    button.addEventListener('click', () => setLanguage(code));
     switcher.appendChild(button);
   }
   document.querySelector('.header-actions')?.appendChild(switcher);
   let observer;
   function setLanguage(code) {
     if (!supported.includes(code)) return;
+    if (!window.LTPE_BUILD && code !== language) {
+      location.assign(languageURL(code).href);
+      return;
+    }
     observer?.disconnect();
     language = code;
     document.documentElement.lang = code;
     try {
       localStorage.setItem('ltpe-language', code);
     } catch {}
-    try {
-      const url = new URL(location.href);
-      url.searchParams.set('lang', code);
-      history.replaceState(null, '', url);
-    } catch {}
     switcher.setAttribute('aria-label', t('Langue du site'));
     for (const button of switcher.children)
-      button.setAttribute('aria-pressed', String(button.lang === code));
+      button.setAttribute('aria-current', button.lang === code ? 'page' : 'false');
     translate();
     updateLinks();
     document.dispatchEvent(new CustomEvent('ltpe:languagechange', { detail: { language: code } }));
@@ -147,6 +154,9 @@
     setLanguage,
   };
   setLanguage(language);
+  if (!window.LTPE_BUILD && supported.includes(query)) {
+    location.replace(languageURL(query).href);
+  }
   observer = new MutationObserver((records) => {
     observer.disconnect();
     if (!window.document?.documentElement) return;

@@ -116,7 +116,7 @@ async function initializeYouTube() {
   if (!container) return;
   container.innerHTML = '<p class="video-status" role="status">Chargement des prédications…</p>';
   try {
-    const response = await fetch('data/youtube-videos.json', {
+    const response = await fetch(window.ltpeSiteURL('data/youtube-videos.json'), {
       signal: AbortSignal.timeout(15000),
     });
     if (!response.ok) throw new Error('Catalogue indisponible');

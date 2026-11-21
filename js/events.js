@@ -150,12 +150,12 @@
         if (!poster.src.startsWith('images/') || /(?:\.\.|:)/.test(poster.src)) continue;
         const figure = element('figure'),
           link = element('a');
-        link.href = poster.src;
+        link.href = window.ltpeSiteURL(poster.src);
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
         link.setAttribute('aria-label', t(poster.label) + ' — ' + t('Ouvrir l’affiche'));
         const img = element('img');
-        img.src = poster.src;
+        img.src = window.ltpeSiteURL(poster.src);
         img.alt = title(event) + ' — ' + t(poster.label);
         img.loading = 'lazy';
         link.appendChild(img);
@@ -181,7 +181,7 @@
   document.addEventListener('ltpe:languagechange', render);
   window.addEventListener('resize', measureBanner);
   document.fonts?.ready.then(measureBanner);
-  fetch('data/events.json', { signal: AbortSignal.timeout(15000) })
+  fetch(window.ltpeSiteURL('data/events.json'), { signal: AbortSignal.timeout(15000) })
     .then((response) => {
       if (!response.ok) throw Error('events');
       return response.json();

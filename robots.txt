@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://miketd24.github.io/ltpe-website/sitemap.xml
