@@ -143,6 +143,46 @@ section {
   line-height: 1.5;
 }
 
+.donation-qr {
+  margin: 28px 0;
+  padding-top: 24px;
+  border-top: 1px solid #e2dfd7;
+}
+
+.donation-qr img {
+  display: block;
+  width: min(100%, 320px);
+  height: auto;
+  margin: 20px auto;
+  border: 1px solid #e2dfd7;
+}
+
+.prayer-poster {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: auto;
+  border-radius: 14px;
+}
+
+.prayer-details {
+  margin: 24px 0;
+}
+
+.prayer-details > div {
+  padding: 12px 0;
+  border-bottom: 1px solid #e2dfd7;
+}
+
+.prayer-details dt {
+  font-weight: 700;
+}
+
+.prayer-details dd {
+  margin: 6px 0 0;
+}
+
 .form-submit:disabled {
   cursor: wait;
   opacity: 0.7;

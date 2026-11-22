@@ -1,5 +1,61 @@
 /* Editorial translations. Names, bank details, book and YouTube titles stay original. */
 window.LTPE_TRANSLATIONS = [
+  ['Faire un don avec le QR code', 'Een gift doen met de QR-code', 'Give using the QR code'],
+  [
+    'Scannez ce QR code avec votre application bancaire pour préparer votre virement. Choisissez librement le montant de votre don.',
+    'Scan deze QR-code met uw bankapp om uw overschrijving voor te bereiden. U kiest zelf het bedrag van uw gift.',
+    'Scan this QR code with your banking app to prepare your transfer. Choose the amount you wish to give.',
+  ],
+  [
+    'QR code de virement vers le compte de LTPE ASBL',
+    'QR-code voor een overschrijving naar de rekening van LTPE ASBL',
+    'Bank transfer QR code for the LTPE ASBL account',
+  ],
+  [
+    'Le QR code préremplit la communication « Dimes ou offrandes ». Vous pouvez l’adapter dans votre application bancaire.',
+    'De QR-code vult de mededeling « Dimes ou offrandes » vooraf in. U kunt die aanpassen in uw bankapp.',
+    'The QR code prefills the reference “Dimes ou offrandes”. You can edit it in your banking app.',
+  ],
+  ['Ouvrir le QR code en grand', 'De QR-code vergroten', 'Open the full-size QR code'],
+  ['Découvrir les prières matinales', 'Meer over het ochtendgebed', 'Discover morning prayer'],
+  ['À la Brèche — Prières matinales', 'À la Brèche — Ochtendgebed', 'À la Brèche — Morning prayer'],
+  [
+    'Commençons la journée ensemble dans la prière.',
+    'Laten we samen de dag beginnen met gebed.',
+    'Let us begin the day together in prayer.',
+  ],
+  [
+    'Affiche À la Brèche : prières matinales du 23 au 27 novembre 2026',
+    'Affiche À la Brèche: ochtendgebed van 23 tot en met 27 november 2026',
+    'À la Brèche poster: morning prayer from 23 to 27 November 2026',
+  ],
+  ['Rendez-vous de novembre 2026', 'Bijeenkomst in november 2026', 'November 2026 gathering'],
+  [
+    'La double faveur : savoir donner et savoir recevoir',
+    'De dubbele gunst: kunnen geven en kunnen ontvangen',
+    'Double favour: knowing how to give and how to receive',
+  ],
+  ['Actes 20 : 35', 'Handelingen 20 : 35', 'Acts 20 : 35'],
+  [
+    'Chaque dernière semaine du mois, retrouvons-nous sur Zoom pour commencer la journée dans la prière, partager notre foi et nous encourager les uns les autres.',
+    'Laten we elke laatste week van de maand via Zoom samenkomen om de dag te beginnen met gebed, ons geloof te delen en elkaar te bemoedigen.',
+    'Every last week of the month, let us meet on Zoom to begin the day in prayer, share our faith and encourage one another.',
+  ],
+  ['Dates de cette rencontre', 'Data van deze bijeenkomst', 'Dates of this gathering'],
+  ['23 novembre 2026', '23 november 2026', '23 November 2026'],
+  ['27 novembre 2026', '27 november 2026', '27 November 2026'],
+  ['au', 't/m', 'to'],
+  ['— du lundi au vendredi', '— van maandag tot vrijdag', '— Monday to Friday'],
+  ['Horaire', 'Tijd', 'Time'],
+  ['En ligne sur Zoom', 'Online via Zoom', 'Online on Zoom'],
+  ['Identifiant de réunion Zoom', 'Zoom-vergaderings-ID', 'Zoom meeting ID'],
+  [
+    'Si un code d’accès vous est demandé, contactez l’église.',
+    'Neem contact op met de kerk als er om een toegangscode wordt gevraagd.',
+    'If a passcode is requested, please contact the church.',
+  ],
+  ['Rejoindre la réunion Zoom', 'Deelnemen aan de Zoom-bijeenkomst', 'Join the Zoom meeting'],
+  ['Retour aux horaires', 'Terug naar de tijden', 'Back to the schedule'],
   ['Envoyer mon message', 'Mijn bericht versturen', 'Send my message'],
   ['Envoi en cours…', 'Verzenden…', 'Sending…'],
   [
@@ -115,7 +171,7 @@ window.LTPE_TRANSLATIONS = [
     'The community gathered in prayer',
   ],
   ['10h - 12h', '10:00 – 12:00', '10:00 – 12:00'],
-  ['19h30 - 20h30', '19:30 – 20:30', '19:30 – 20:30'],
+  ['19h - 20h30', '19:00 – 20:30', '19:00 – 20:30'],
   ['6h - 7h', '06:00 – 07:00', '06:00 – 07:00'],
   ['Événements à venir', 'Komende evenementen', 'Upcoming events'],
   [

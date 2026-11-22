@@ -180,6 +180,8 @@ Search Console demande une validation de propriété et reste à connecter avec 
 
 ## Formulaire de contact et icône d’onglet
 
+Le propriétaire a confirmé la réception réelle du message test dans la boîte de l’église et l’affichage du favicon. La chaîne d’envoi est donc validée au-delà des simulations automatiques.
+
 L’icône `images/favicon.svg` reprend la partie LTPE du logo original dans un carré adapté aux onglets, sans changer les lettres. Le générateur l’ajoute aux 39 pages et aux anciennes adresses.
 
 Le formulaire direct Web3Forms est configuré dans le générateur et `js/main.js`. Le propriétaire a fourni la clé publique reçue à l’adresse de l’église ; elle est renseignée dans `scripts/contact.json` (`access_key`). Cette clé est prévue pour le HTML. Une variable d’environnement `LTPE_CONTACT_ACCESS_KEY` peut aussi fournir cette valeur au build. Ne jamais y mettre une clé SMTP, un mot de passe ou la clé YouTube.
@@ -194,7 +196,17 @@ Le domaine ne change pas le circuit : récupérer les changements GitHub, modifi
 
 Référence du service : https://docs.web3forms.com/getting-started/installation
 
-## Aperçu local (commandes)
+## Dons et prières matinales — mise à jour du 22 novembre 2026
+
+- Le favicon est `images/favicon.svg`, ajouté par `scripts/build-site.cjs` via `tag('link', { rel: 'icon', ... })`.
+- `images/qr-don-ltpe.png` est extrait du premier exemplaire du PDF original, remis à l’endroit sans redessin du code. Sa lecture retrouve exactement le contenu original : virement SEPA vers `BE24001665833338`, sans montant fixé, avec communication « Dimes ou offrandes ». Décodage vérifié également à 320 et 280 pixels. Le PDF original `images/QR CODE DON.pdf` reste local et ignoré par Git.
+- Le QR est affiché sur la page Donner, avec un lien vers sa version agrandie et le virement classique conservé.
+- Les réunions du mercredi et vendredi commencent à 19 h ; fin inchangée à 20 h 30.
+- La carte « Prières Matinales » de l’accueil mène à `breche.html`. Cette page présente le programme daté du 23 au 27 novembre 2026, de 6 h à 7 h, le thème de l’affiche et l’identifiant Zoom fourni. L’affiche originale est en français ; les textes de page et les informations pratiques sont disponibles en FR/NL/EN.
+- Pour le mois suivant, mettre à jour l’affiche, les dates, le thème et les traductions. Les dates de novembre restent explicites afin de ne pas présenter ce programme comme un rendez-vous permanent.
+- La génération couvre désormais 14 pages sources, soit 42 pages de langue ; les tests et le sitemap calculent ce nombre automatiquement.
+
+## Aperçu local (lancer le site)
 
 Depuis le dossier du projet :
 

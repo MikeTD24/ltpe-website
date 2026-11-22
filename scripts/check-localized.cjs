@@ -129,10 +129,13 @@ const pause = () => new Promise((resolve) => setTimeout(resolve, 25));
     assert(!fs.existsSync(path.join(output, 'images', file)), 'Original must stay local: ' + file);
   }
   const sitemap = new JSDOM(read('dist/sitemap.xml'), { contentType: 'text/xml' });
-  assert.equal(sitemap.window.document.querySelectorAll('loc').length, 39);
+  assert.equal(
+    sitemap.window.document.querySelectorAll('loc').length,
+    Object.keys(config.pages).length * languages.length
+  );
   sitemap.window.close();
   console.log(
-    '39 static language pages: content, metadata, links, assets and anchors OK; dynamic videos and 9/18/9 controls OK in all languages.'
+    `${Object.keys(config.pages).length * languages.length} static language pages: content, metadata, links, assets and anchors OK; dynamic videos and 9/18/9 controls OK in all languages.`
   );
 })().catch((error) => {
   console.error(error);

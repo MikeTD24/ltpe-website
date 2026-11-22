@@ -194,7 +194,9 @@ async function build() {
     path.join(output, 'robots.txt'),
     `User-agent: *\nAllow: /\n\nSitemap: ${new URL('sitemap.xml', base).href}\n`
   );
-  console.log(`Generated ${urls.length} localized pages and 13 legacy aliases in dist/.`);
+  console.log(
+    `Generated ${urls.length} localized pages and ${Object.keys(config.pages).length} legacy aliases in dist/.`
+  );
 }
 
 build().catch((error) => {
