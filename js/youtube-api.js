@@ -184,7 +184,11 @@ async function initializeYouTube() {
     }
   }
 }
-document.addEventListener('DOMContentLoaded', initializeYouTube);
+if (window.LTPE_BUILD) {
+  window.ltpeYouTubeReady = initializeYouTube();
+} else {
+  document.addEventListener('DOMContentLoaded', initializeYouTube);
+}
 
 document.addEventListener('ltpe:languagechange', () => {
   if (!teachings.length) return;

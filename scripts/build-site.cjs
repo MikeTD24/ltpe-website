@@ -101,8 +101,9 @@ async function build() {
         window.eval(await read(`js/${script}.js`));
       if (['index.html', 'teachings.html'].includes(file)) {
         window.eval(await read('js/youtube-api.js'));
-        window.document.dispatchEvent(new window.Event('DOMContentLoaded'));
+        await window.ltpeYouTubeReady;
       }
+      await window.ltpeEventsReady;
       await pause();
       const document = window.document;
       document.documentElement.lang = language;

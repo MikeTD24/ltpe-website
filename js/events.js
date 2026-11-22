@@ -181,7 +181,9 @@
   document.addEventListener('ltpe:languagechange', render);
   window.addEventListener('resize', measureBanner);
   document.fonts?.ready.then(measureBanner);
-  fetch(window.ltpeSiteURL('data/events.json'), { signal: AbortSignal.timeout(15000) })
+  window.ltpeEventsReady = fetch(window.ltpeSiteURL('data/events.json'), {
+    signal: AbortSignal.timeout(15000),
+  })
     .then((response) => {
       if (!response.ok) throw Error('events');
       return response.json();
