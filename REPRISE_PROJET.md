@@ -143,6 +143,16 @@ Références : [Angular — route guards](https://angular.dev/guide/routing/rout
 
 ## Référencement et domaine OVHcloud
 
+### État actuel — 22 novembre 2026
+
+Le domaine officiel est désormais `https://www.ltpe.be/`. Les quatre entrées A GitHub Pages et le CNAME `www` vers `miketd24.github.io` sont en place ; les MX OVH sont conservés. GitHub a approuvé le certificat couvrant `ltpe.be` et `www.ltpe.be` après retrait/réajout immédiat du domaine selon sa procédure officielle de dépannage. L’option `https_enforced` a ensuite été activée et vérifiée.
+
+La source `scripts/seo.json` utilise maintenant le domaine officiel. La génération fournit les URL canoniques, liens de langue, cartes de partage et sitemap correspondants. Ne pas remettre l’ancien préfixe `/ltpe-website/` dans les liens du domaine propre.
+
+Pour terminer Search Console, le propriétaire doit ouvrir `https://search.google.com/search-console/`, ajouter une propriété de type **Domaine** nommée `ltpe.be` (sans protocole, chemin ni www), puis obtenir sa valeur de vérification TXT. Ajouter cette valeur comme nouvelle entrée TXT à la racine chez OVH, en préservant les entrées SPF/MX existantes. Valider la propriété avec le compte Google qui doit en garder la maîtrise, puis soumettre `https://www.ltpe.be/sitemap.xml`. Aucune propriété Google n’a été créée ni validée automatiquement pendant le raccordement.
+
+Les paragraphes suivants relatent la préparation initiale ; l’état ci-dessus les remplace pour les adresses du domaine.
+
 Le mail du 20 novembre confirme les serveurs DNS OVHcloud, pas le raccordement à Pages. Le résolveur public interrogé ne trouvait pas encore `ltpe.be` et `www.ltpe.be` au moment du contrôle. Ne pas commander de nouveau domaine.
 
 - Titres et descriptions propres aux treize pages, rédigés en FR/NL/EN et mentionnant Ruisbroek quand pertinent.
