@@ -1,5 +1,32 @@
 /* Editorial translations. Names, bank details, book and YouTube titles stay original. */
 window.LTPE_TRANSLATIONS = [
+  ['Envoyer mon message', 'Mijn bericht versturen', 'Send my message'],
+  ['Envoi en cours…', 'Verzenden…', 'Sending…'],
+  [
+    'Votre message sera transmis directement à l’église, sans ouvrir votre messagerie.',
+    'Uw bericht wordt rechtstreeks naar de kerk verstuurd, zonder uw e-mailprogramma te openen.',
+    'Your message will be sent directly to the church, without opening your email app.',
+  ],
+  [
+    'Votre message a été transmis au service d’envoi. Merci de nous avoir contactés.',
+    'Uw bericht is doorgestuurd naar de verzenddienst. Bedankt dat u contact met ons opneemt.',
+    'Your message has been submitted to the delivery service. Thank you for contacting us.',
+  ],
+  [
+    'L’envoi n’a pas pu être confirmé. Votre texte est conservé. Réessayez ou écrivez à letempledupleinevangile@gmail.com.',
+    'De verzending kon niet worden bevestigd. Uw tekst is bewaard. Probeer opnieuw of mail naar letempledupleinevangile@gmail.com.',
+    'Sending could not be confirmed. Your text has been kept. Try again or email letempledupleinevangile@gmail.com.',
+  ],
+  [
+    'Ce formulaire utilise Web3Forms pour transmettre votre nom, votre adresse e-mail et votre message à l’église.',
+    'Dit formulier gebruikt Web3Forms om uw naam, e-mailadres en bericht naar de kerk te sturen.',
+    'This form uses Web3Forms to send your name, email address and message to the church.',
+  ],
+  [
+    'Confidentialité du service d’envoi',
+    'Privacy van de verzenddienst',
+    'Delivery service privacy',
+  ],
   ['Charger moins', 'Minder tonen', 'Show fewer'],
   [
     'Recherche dans les titres des vidéos. Les catégories sont déterminées à partir de ces titres.',

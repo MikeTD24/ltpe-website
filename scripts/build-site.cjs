@@ -13,6 +13,8 @@ const pause = () => new Promise((resolve) => setTimeout(resolve, 20));
 async function build() {
   const config = JSON.parse(await read('scripts/seo.json'));
   const formatting = JSON.parse(await read('.prettierrc.json'));
+  const contact = JSON.parse(await read('scripts/contact.json'));
+  contact.access_key = process.env.LTPE_CONTACT_ACCESS_KEY || contact.access_key;
   const base = new URL(config.base_url);
   const url = (file, language) => new URL(`${language}/${file}`, base).href;
   const urls = [];
@@ -44,6 +46,50 @@ async function build() {
         window.document.addEventListener('DOMContentLoaded', resolve, { once: true })
       );
       window.LTPE_BUILD = true;
+      const form = window.document.getElementById('contact-form');
+      if (form && contact.access_key) {
+        if (!/^[a-zA-Z0-9_-]{30,100}$/.test(contact.access_key)) {
+          throw new Error('Invalid public Web3Forms access key in scripts/contact.json');
+        }
+        form.action = 'https://api.web3forms.com/submit';
+        form.removeAttribute('enctype');
+        for (const [name, value] of Object.entries({
+          access_key: contact.access_key,
+          subject: 'Contact — Le Temple du Plein Évangile',
+          from_name: 'Site LTPE',
+        })) {
+          const input = window.document.createElement('input');
+          input.type = 'hidden';
+          input.name = name;
+          input.value = value;
+          form.append(input);
+        }
+        const trap = window.document.createElement('input');
+        trap.type = 'checkbox';
+        trap.name = 'botcheck';
+        trap.tabIndex = -1;
+        trap.hidden = true;
+        trap.setAttribute('aria-hidden', 'true');
+        form.append(trap);
+        form.querySelector('button[type="submit"]').textContent = 'Envoyer mon message';
+        form.querySelector('#contact-status').textContent =
+          'Votre message sera transmis directement à l’église, sans ouvrir votre messagerie.';
+        const notice = window.document.createElement('p');
+        notice.className = 'contact-privacy';
+        notice.textContent =
+          'Ce formulaire utilise Web3Forms pour transmettre votre nom, votre adresse e-mail et votre message à l’église.';
+        form.append(notice);
+        const privacy = window.document.createElement('a');
+        privacy.href = 'https://web3forms.com/privacy';
+        privacy.textContent = 'Confidentialité du service d’envoi';
+        privacy.target = '_blank';
+        privacy.rel = 'noopener noreferrer';
+        form.append(privacy);
+        const policy = window.document.querySelector('meta[http-equiv="Content-Security-Policy"]');
+        policy.content = policy.content
+          .replace("connect-src 'self'", "connect-src 'self' https://api.web3forms.com")
+          .replace('form-action mailto:', 'form-action https://api.web3forms.com');
+      }
       window.fetch = async (resource) => {
         const pathname = new URL(resource, base).pathname;
         const file = pathname.endsWith('events.json')
@@ -72,6 +118,7 @@ async function build() {
         for (const [key, value] of Object.entries(attributes)) element.setAttribute(key, value);
         document.head.append(element);
       }
+      tag('link', { rel: 'icon', type: 'image/svg+xml', href: '../images/favicon.svg' });
       tag('link', { rel: 'canonical', href: url(file, language) });
       for (const code of languages)
         tag('link', { rel: 'alternate', hreflang: code, href: url(file, code) });

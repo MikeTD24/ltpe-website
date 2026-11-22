@@ -16,6 +16,10 @@ const pause = () => new Promise((resolve) => setTimeout(resolve, 25));
       const dom = new JSDOM(read(`dist/${language}/${file}`), { url });
       const document = dom.window.document;
       assert.equal(document.documentElement.lang, language);
+      assert.equal(
+        document.querySelector('link[rel="icon"]').getAttribute('href'),
+        '../images/favicon.svg'
+      );
       assert.equal(document.title, metadata.titles[index]);
       assert.equal(
         document.querySelector('meta[name="description"]').content,
@@ -60,6 +64,15 @@ const pause = () => new Promise((resolve) => setTimeout(resolve, 25));
         }
       }
       assert(!document.querySelector('script[src$="js/seo.js"]'));
+      const contactForm = document.getElementById('contact-form');
+      if (contactForm && require('./contact.json').access_key) {
+        assert.equal(contactForm.action, 'https://api.web3forms.com/submit');
+        assert(contactForm.querySelector('[name="access_key"]').value);
+        assert(contactForm.querySelector('[name="botcheck"]').hidden);
+        const policy = document.querySelector('meta[http-equiv="Content-Security-Policy"]').content;
+        assert(policy.includes("connect-src 'self' https://api.web3forms.com"));
+        assert(policy.includes('form-action https://api.web3forms.com'));
+      }
       dom.window.close();
     }
   }

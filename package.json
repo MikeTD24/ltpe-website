@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build-site.cjs",
-    "test": "node scripts/check-teachings.cjs && node scripts/check-localized.cjs"
+    "test": "node scripts/check-teachings.cjs && node scripts/check-localized.cjs && node scripts/check-contact.cjs"
   },
   "devDependencies": {
     "jsdom": "26.1.0",

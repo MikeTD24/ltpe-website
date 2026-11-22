@@ -30,9 +30,51 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const form = document.getElementById('contact-form');
   if (form)
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
       if (!form.reportValidity()) return;
+      if (form.dataset.sending === 'true') return;
+      const status = document.getElementById('contact-status');
+      const t = (text) => window.ltpeI18n?.t(text) || text;
+      if (form.querySelector('[name="access_key"]')) {
+        if (form.querySelector('[name="botcheck"]')?.checked) return;
+        const button = form.querySelector('button[type="submit"]');
+        const originalLabel = button.textContent;
+        if (!['name', 'email', 'message'].every((id) => document.getElementById(id).value.trim()))
+          return;
+        form.dataset.sending = 'true';
+        form.setAttribute('aria-busy', 'true');
+        button.disabled = true;
+        button.textContent = t('Envoi en cours…');
+        status.dataset.state = 'sending';
+        status.textContent = t('Envoi en cours…');
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            headers: { Accept: 'application/json' },
+            body: new FormData(form),
+            signal: AbortSignal.timeout(20000),
+          });
+          const result = await response.json();
+          if (!response.ok || result.success !== true) throw new Error('Message not accepted');
+          form.reset();
+          status.dataset.state = 'success';
+          status.textContent = t(
+            'Votre message a été transmis au service d’envoi. Merci de nous avoir contactés.'
+          );
+        } catch {
+          status.dataset.state = 'error';
+          status.textContent = t(
+            'L’envoi n’a pas pu être confirmé. Votre texte est conservé. Réessayez ou écrivez à letempledupleinevangile@gmail.com.'
+          );
+        } finally {
+          form.dataset.sending = 'false';
+          form.removeAttribute('aria-busy');
+          button.disabled = false;
+          button.textContent = originalLabel;
+        }
+        return;
+      }
       const name = document.getElementById('name').value.trim(),
         email = document.getElementById('email').value.trim(),
         message = document.getElementById('message').value.trim();

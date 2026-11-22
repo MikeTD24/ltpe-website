@@ -178,7 +178,23 @@ Le contenu traduit, les événements et les premières vidéos sont prérendus l
 
 Search Console demande une validation de propriété et reste à connecter avec le propriétaire. Ne pas promettre de classement ni d’indexation automatique. Références : [Google — versions linguistiques](https://developers.google.com/search/docs/specialty/international/localized-versions), [Google — URL canoniques](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls).
 
-## Aperçu local
+## Formulaire de contact et icône d’onglet
+
+L’icône `images/favicon.svg` reprend la partie LTPE du logo original dans un carré adapté aux onglets, sans changer les lettres. Le générateur l’ajoute aux 39 pages et aux anciennes adresses.
+
+Le formulaire direct Web3Forms est configuré dans le générateur et `js/main.js`. Le propriétaire a fourni la clé publique reçue à l’adresse de l’église ; elle est renseignée dans `scripts/contact.json` (`access_key`). Cette clé est prévue pour le HTML. Une variable d’environnement `LTPE_CONTACT_ACCESS_KEY` peut aussi fournir cette valeur au build. Ne jamais y mettre une clé SMTP, un mot de passe ou la clé YouTube.
+
+Tant que cette valeur est vide, la version publiée conserve le formulaire « Préparer mon e-mail ». Dès qu’elle est renseignée, le build produit un formulaire POST direct : retour de réussite uniquement après acceptation par le service, texte conservé en cas d’échec, délai limité, bouton désactivé pendant l’envoi et piège anti-robot. La notice de transmission à Web3Forms et les messages sont traduits. La CSP autorise uniquement l’endpoint nécessaire sur les pages de contact activées. Sans JavaScript, le formulaire POST est traité par le service externe.
+
+Les tests `scripts/check-contact.cjs` simulent les retours sans envoyer d’e-mail. La réception réelle doit encore être vérifiée dans la boîte de l’église après activation de sa clé. Un retour accepté du service ne prouve pas à lui seul l’arrivée dans la boîte principale (vérifier aussi les spams).
+
+### Modifier le site après connexion du domaine
+
+Le domaine ne change pas le circuit : récupérer les changements GitHub, modifier les HTML sources à la racine, `js/translations.js` et les JSON concernés, exécuter `npm run build` puis `npm test`, vérifier l’aperçu, committer et pousser. GitHub Actions génère et publie `dist/` sur `https://www.ltpe.be/`. Ne pas modifier `dist/` manuellement. Les vidéos restent synchronisées automatiquement toutes les six heures. Il n’y a pas d’interface CRUD d’administration à ce stade.
+
+Référence du service : https://docs.web3forms.com/getting-started/installation
+
+## Aperçu local (commandes)
 
 Depuis le dossier du projet :
 
