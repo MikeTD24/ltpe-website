@@ -143,6 +143,10 @@ Références : [Angular — route guards](https://angular.dev/guide/routing/rout
 
 ## Référencement et domaine OVHcloud
 
+### Fiabilité des publications — 23 novembre 2026
+
+Le run `45205883696` a échoué après un upload réussi : l’action de déploiement a obtenu zéro artifact dans l’API alors que le paquet `github-pages` (ID `14834665105`) est devenu visible ensuite. Les sources de l’application n’étaient pas en cause. Le workflow attend désormais deux confirmations consécutives de visibilité de l’artifact exact avant de lancer le déploiement. Attente bornée, nouvelle tentative pour les erreurs API temporaires, arrêt explicite en cas de refus d’accès ou de paquet manquant/expiré. Le jeton est limité à la lecture des artifacts pour cette étape et n’est pas affiché. Tests : `python scripts/test_wait_pages_artifact.py`.
+
 ### État actuel — 22 novembre 2026
 
 Le domaine officiel est désormais `https://www.ltpe.be/`. Les quatre entrées A GitHub Pages et le CNAME `www` vers `miketd24.github.io` sont en place ; les MX OVH sont conservés. GitHub a approuvé le certificat couvrant `ltpe.be` et `www.ltpe.be` après retrait/réajout immédiat du domaine selon sa procédure officielle de dépannage. L’option `https_enforced` a ensuite été activée et vérifiée.

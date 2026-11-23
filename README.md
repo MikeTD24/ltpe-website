@@ -95,6 +95,8 @@ Le domaine ne change pas le circuit : **sources → génération → tests → c
 
 Le workflow `.github/workflows/pages.yml` installe les versions verrouillées par `package-lock.json`, génère les pages, exécute les tests et déploie **`dist/`**. La source de publication Pages est **GitHub Actions**, et non une publication directe des fichiers de la branche.
 
+Après l’envoi du paquet, une vérification attend que son identifiant exact soit visible deux fois dans l’API GitHub avant de lancer le déploiement. Elle réduit les échecs liés à un délai de disponibilité du paquet. Une notification rouge signale néanmoins un échec réel à examiner dans Actions ; le site continue alors à servir sa dernière version publiée avec succès.
+
 Les anciennes adresses à la racine restent accessibles comme alias français. Les anciens liens `?lang=nl` ou `?lang=en` sont redirigés vers les nouvelles pages lorsque JavaScript est actif.
 
 ### Ajouter un événement

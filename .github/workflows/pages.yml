@@ -7,6 +7,7 @@ on:
     workflows: [Synchroniser les vidéos YouTube]
     types: [completed]
 permissions:
+  actions: read
   contents: read
   pages: write
   id-token: write
@@ -32,9 +33,16 @@ jobs:
           npm ci --ignore-scripts --no-audit --no-fund
           npm run build
           npm test
+          python scripts/test_wait_pages_artifact.py
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        id: upload
         with:
           path: dist
+      - name: Attendre la disponibilité du paquet Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PAGES_ARTIFACT_ID: ${{ steps.upload.outputs.artifact_id }}
+        run: python scripts/wait-pages-artifact.py
       - name: Déployer
         id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
