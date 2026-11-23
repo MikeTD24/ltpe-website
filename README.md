@@ -1,241 +1,166 @@
-# Le Temple du Plein Évangile - Site Web Officiel
+# Le Temple du Plein Évangile — LTPE
 
-![LTPE Logo](images/ltpe-logo.png)
+<img src="images/Ltpe-logo.jpeg" alt="Logo du Temple du Plein Évangile" width="200" />
 
-## 📖 Description
+Site officiel de l’église **Le Temple du Plein Évangile**, à Ruisbroek, en Belgique.
 
-**Le Temple du Plein Évangile (LTPE)** est un site web professionnel et moderne conçu pour l'église évangélique LTPE basée à Bruxelles, Belgique. Le site offre une présence en ligne complète avec intégration YouTube dynamique, permettant aux membres et visiteurs de rester connectés aux enseignements et événements de l'église. (Projet en cours) !
+**Site en ligne : [www.ltpe.be](https://www.ltpe.be/)**
 
-## ✨ Caractéristiques Principales
+[Français](https://www.ltpe.be/fr/index.html) · [Nederlands](https://www.ltpe.be/nl/index.html) · [English](https://www.ltpe.be/en/index.html)
 
-### 🏠 Pages Principales
+Le site utilise HTML, CSS et JavaScript. Il est hébergé sur **GitHub Pages**, avec un domaine enregistré chez OVHcloud et une redirection vers HTTPS. Il n’y a pas de serveur applicatif ni d’interface d’administration.
 
-1. **Accueil (Homepage)**
-   - Hero section avec slogan de l'église
-   - Section bienvenue avec présentation
-   - Horaires des cultes et réunions de prière
-   - Dernières prédications (synchronisées avec YouTube)
-   - Départements de l'église (ECODIM, Louange, Prière, Logistique)
-   - Présentation du Pasteur Martin Mfuamba
-   - Formulaire de contact et localisation
+## Fonctionnalités
 
-2. **Qui Sommes-Nous (About)**
-   - Timeline de l'histoire de l'église (depuis 2012)
-   - Vision et Mission
-   - Valeurs fondamentales
-   - Affiliation Assemblées de DIEU
-   - Équipe pastorale
+- **14 pages sources**, générées en FR/NL/EN : **42 pages HTML statiques**. Les textes, liens de langue et métadonnées sont disponibles sans JavaScript.
+- Accueil, présentation de l’église, histoire depuis 2012, équipe pastorale et sept départements.
+- Enseignements YouTube : dernier message, recherche dans les titres, catégories, tri et boutons « Charger plus / moins » par groupes de neuf.
+- Synchronisation des vidéos publiques **toutes les six heures**, indépendamment des visites.
+- Événements : programme, affiches, bandeau d’annonce et archives après la fin des rencontres.
+- Page **À la Brèche** avec affiche, programme daté et accès aux prières matinales sur Zoom.
+- Page **Donner** avec coordonnées bancaires et QR code de virement.
+- **Formulaire Web3Forms** : envoi depuis le site sans ouvrir la messagerie, confirmation du service et conservation du texte en cas d’échec. La réception réelle dans la boîte de l’église a été testée.
+- Navigation mobile, carte Google Maps, liens sociaux et favicon LTPE.
+- Titres et descriptions FR/NL/EN, URL canoniques, liens `hreflang`, aperçus de partage, sitemap et `robots.txt`. La propriété Search Console est validée et Google a lu le sitemap ; cela ne garantit pas l’indexation de toutes les pages.
 
-3. **Enseignements (Teachings)**
-   - Dernier enseignement en vedette
-   - Grille complète de tous les enseignements
-   - Recherche et filtrage par catégorie
-   - Intégration YouTube complète
-   - Pagination pour charger plus de vidéos
+JavaScript complète le HTML généré pour actualiser les catalogues, filtrer les vidéos, gérer la pagination et envoyer le formulaire.
 
-### 🎨 Design & UX
+## Démarrage local
 
-- **Palette de couleurs** : Or/Doré (#D4AF37) et Bleu Foncé (#1A2332)
-- **Typographie** : Montserrat (titres) et Open Sans (corps)
-- **Responsive Design** : Optimisé pour desktop, tablette et mobile
-- **Performance** : Chargement rapide et optimisation SEO
-- **Accessibilité** : Normes WCAG respectées
+Prérequis : **Git**, **Node.js 22 ou supérieur avec npm**, et **Python 3** pour le serveur d’aperçu ci-dessous.
 
-### 🔌 Intégrations
-
-- **YouTube API V3** : Synchronisation automatique des vidéos
-- **Google Maps** : Localisation de l'église
-- **Formulaires de Contact** : Collecte de messages des visiteurs
-- **Réseaux Sociaux** : Liens vers Facebook, Instagram, YouTube
-
-## 🚀 Démarrage Rapide
-
-### Prérequis
-
-- Navigateur web moderne (Chrome, Firefox, Safari, Edge)
-- Serveur web (Apache, Nginx) ou serveur local
-
-### Installation
-
-1. **Cloner le repository**
-   ```bash
-   git clone https://github.com/votreusername/ltpe-website.git
-   cd ltpe-website
-   ```
-
-2. **Configurer l'API YouTube**
-   - Créer un projet sur [Google Cloud Console](https://console.cloud.google.com/)
-   - Activer l'API YouTube Data V3
-   - Créer une clé API
-   - Remplacer `YOUR_YOUTUBE_API_KEY` dans `js/youtube-api.js`
-   - Remplacer `UCYourChannelID` par l'ID réel de la chaîne LTPE
-
-3. **Lancer un serveur local**
-   ```bash
-   # Avec Python 3
-   python -m http.server 8000
-   
-   # Avec Node.js (http-server)
-   npx http-server
-   ```
-
-4. **Accéder au site**
-   - Ouvrir `http://localhost:8000` dans votre navigateur
-
-## 📁 Structure du Projet
-
-```
-ltpe-website/
-├── index.html              # Page d'accueil
-├── about.html              # Page Qui Sommes-Nous
-├── teachings.html          # Page Enseignements
-├── css/
-│   └── styles.css          # Styles principaux
-├── js/
-│   ├── main.js             # JavaScript principal
-│   └── youtube-api.js      # Intégration API YouTube
-├── images/                 # Dossier pour les images
-├── assets/                 # Ressources supplémentaires
-├── README.md               # Ce fichier
-└── .gitignore              # Fichiers à ignorer dans Git
+```bash
+git clone https://github.com/MikeTD24/ltpe-website.git
+cd ltpe-website
+npm ci --ignore-scripts
+npm run build
+npm test
+python -m http.server 8765 --bind 127.0.0.1 --directory dist
 ```
 
-## 🔧 Configuration de l'API YouTube
+Ouvrir :
 
-### Étapes Détaillées
+- Français : <http://127.0.0.1:8765/fr/index.html>
+- Néerlandais : <http://127.0.0.1:8765/nl/index.html>
+- Anglais : <http://127.0.0.1:8765/en/index.html>
 
-1. **Créer un projet Google Cloud**
-   - Aller sur [Google Cloud Console](https://console.cloud.google.com/)
-   - Créer un nouveau projet
-   - Nommer le projet "LTPE Website"
+Arrêter le serveur avec `Ctrl+C`. Utiliser le serveur HTTP plutôt qu’une ouverture en `file://`, qui peut bloquer le chargement des catalogues. Aucune clé YouTube n’est nécessaire pour cet aperçu : la génération utilise le catalogue déjà présent dans le dépôt.
 
-2. **Activer l'API YouTube Data V3**
-   - Aller à "APIs & Services" > "Library"
-   - Rechercher "YouTube Data API v3"
-   - Cliquer sur "Enable"
+## Où modifier les contenus ?
 
-3. **Créer une clé API**
-   - Aller à "APIs & Services" > "Credentials"
-   - Cliquer sur "Create Credentials" > "API Key"
-   - Copier la clé générée
+| Contenu ou fonction                | Source                                                                                                         |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Accueil, horaires et contact       | `index.html`                                                                                                   |
+| Présentation et équipe pastorale   | `about.html`                                                                                                   |
+| Enseignements                      | `teachings.html`                                                                                               |
+| Événements et bandeau d’annonce    | `data/events.json`, `evenements.html`, `js/events.js`                                                          |
+| Don et QR de virement              | `donner.html`, `images/qr-don-ltpe.png`                                                                        |
+| Présentation du pasteur            | `pasteur.html`                                                                                                 |
+| Prières matinales À la Brèche      | `breche.html` et son affiche dans `images/`                                                                    |
+| Départements                       | `ecodim.html`, `louange.html`, `priere.html`, `logistique.html`, `jeunesse.html`, `femmes.html`, `hommes.html` |
+| Traductions                        | `js/translations.js`                                                                                           |
+| Langues et navigation              | `js/i18n.js`                                                                                                   |
+| Styles                             | `css/styles.css`, `css/refinements.css`                                                                        |
+| Menu et envoi du formulaire        | `js/main.js`                                                                                                   |
+| Configuration Web3Forms            | `scripts/contact.json`                                                                                         |
+| Domaine et métadonnées FR/NL/EN    | `scripts/seo.json`                                                                                             |
+| Logo dans l’onglet                 | `images/favicon.svg`, ajouté par `scripts/build-site.cjs`                                                      |
+| Génération des pages et du sitemap | `scripts/build-site.cjs`                                                                                       |
+| Catalogue YouTube automatique      | `data/youtube-videos.json`, `scripts/sync-youtube.py`                                                          |
+| Vérifications                      | `scripts/check-teachings.cjs`, `scripts/check-localized.cjs`, `scripts/check-contact.cjs`                      |
 
-4. **Configurer les restrictions**
-   - Ajouter les domaines autorisés
-   - Restreindre à l'API YouTube Data V3
+Les HTML à la racine, les traductions et les JSON sont les sources de travail. **Ne pas modifier `dist/` manuellement** : ses pages, `sitemap.xml` et `robots.txt` sont régénérés à chaque publication. `dist/` est ignoré par Git.
 
-5. **Mettre à jour le code**
-   ```javascript
-   // Dans js/youtube-api.js
-   const YOUTUBE_API_KEY = 'YOUR_GENERATED_API_KEY';
-   const YOUTUBE_CHANNEL_ID = 'UCltpevangile'; // ID réel de la chaîne
-   ```
+## Modifier et publier
 
-## 📝 Utilisation
+Le domaine ne change pas le circuit : **sources → génération → tests → commit → push → publication automatique sur www.ltpe.be**.
 
-### Ajouter une Image
+1. Récupérer les changements GitHub avant de commencer, notamment le catalogue YouTube actualisé par le robot.
+2. Modifier les sources et maintenir les textes de l’interface en FR/NL/EN. Respecter le formatage de `.prettierrc.json` et conserver un code aéré.
+3. Ajouter les nouvelles images à Git avant la génération : seuls les fichiers publics suivis par Git sont copiés dans le résultat. Exemple :
 
-1. Placer l'image dans le dossier `images/`
-2. Référencer dans le HTML : `<img src="images/nom-image.jpg" alt="Description">`
-
-### Modifier le Contenu
-
-- **Texte** : Éditer directement dans les fichiers HTML
-- **Styles** : Modifier `css/styles.css`
-- **Fonctionnalités** : Ajouter du code dans `js/main.js` ou `js/youtube-api.js`
-
-### Déployer le Site
-
-1. **Hébergement Recommandé**
-   - Netlify (gratuit)
-   - Vercel (gratuit)
-   - GitHub Pages (gratuit)
-   - Hostinger (payant)
-
-2. **Déployer sur Netlify**
    ```bash
-   npm install -g netlify-cli
-   netlify deploy
+   git add images/nom-image.jpeg
    ```
 
-3. **Déployer sur GitHub Pages**
-   - Pousser le code vers GitHub
-   - Aller à Settings > Pages
-   - Sélectionner la branche `main`
+4. Générer, tester et vérifier l’aperçu :
 
-## 🎓 Apprentissage & Concepts Techniques
+   ```bash
+   npm run build
+   npm test
+   ```
 
-### Technologies Utilisées
+5. Examiner les fichiers préparés, créer le commit et pousser sur `main`. Dans VS Code : **Commit**, puis **Synchroniser les changements** après vérification des fichiers inclus.
+6. Contrôler la réussite de [GitHub Actions](https://github.com/MikeTD24/ltpe-website/actions) et le rendu en ligne.
 
-- **HTML5** : Structure sémantique
-- **CSS3** : Flexbox, Grid, Variables CSS
-- **JavaScript (ES6+)** : Fetch API, Async/Await
-- **YouTube Data API V3** : Récupération de vidéos
-- **Google Maps API** : Intégration de carte
+Le workflow `.github/workflows/pages.yml` installe les versions verrouillées par `package-lock.json`, génère les pages, exécute les tests et déploie **`dist/`**. La source de publication Pages est **GitHub Actions**, et non une publication directe des fichiers de la branche.
 
-### Concepts Clés
+Les anciennes adresses à la racine restent accessibles comme alias français. Les anciens liens `?lang=nl` ou `?lang=en` sont redirigés vers les nouvelles pages lorsque JavaScript est actif.
 
-1. **Fetch API** : Récupération de données depuis l'API YouTube
-2. **Async/Await** : Gestion asynchrone des requêtes
-3. **DOM Manipulation** : Modification dynamique du contenu
-4. **Responsive Design** : Media queries et flexbox
-5. **RESTful API** : Consommation d'API externe
+### Ajouter un événement
 
-### Ressources d'Apprentissage
+Modifier `data/events.json` avec un identifiant unique, un titre FR/NL/EN, le lieu, les sessions datées avec fuseau horaire et les affiches. Ajouter au dictionnaire les nouveaux textes à traduire. La page Événements et le bandeau d’accueil utilisent cette même source ; les événements terminés restent consultables dans les archives.
 
-- [MDN Web Docs](https://developer.mozilla.org/)
-- [YouTube Data API Documentation](https://developers.google.com/youtube/v3)
-- [CSS-Tricks](https://css-tricks.com/)
-- [JavaScript.info](https://javascript.info/)
+### Actualiser À la Brèche
 
-## 🐛 Dépannage
+Mettre à jour `breche.html`, l’affiche, les dates, le thème et les traductions correspondantes. Vérifier aussi les descriptions dans `scripts/seo.json`. Le programme actuel porte explicitement les dates du **23 au 27 novembre 2026**, de **6 h à 7 h**.
 
-### Les vidéos YouTube ne s'affichent pas
+### Ajouter une page
 
-**Problème** : Erreur "API key not valid"
-**Solution** : Vérifier que la clé API est correcte et que l'API YouTube Data V3 est activée
+Créer le HTML source, compléter `js/translations.js` et enregistrer ses titres/descriptions FR/NL/EN dans `scripts/seo.json`. Ajouter les liens de navigation nécessaires. Le générateur produit ensuite les trois versions et les entrées du sitemap.
 
-### Le formulaire de contact ne fonctionne pas
+## YouTube : clé et synchronisation
 
-**Problème** : Les messages ne sont pas envoyés
-**Solution** : Implémenter un backend (Node.js, PHP, etc.) pour traiter les soumissions
+Le navigateur **ne contient pas de clé API YouTube** et n’appelle pas directement YouTube Data API. Il lit le catalogue `data/youtube-videos.json`.
 
-### Le site n'est pas responsive
+Le workflow `.github/workflows/sync-youtube.yml` exécute `scripts/sync-youtube.py`, récupère jusqu’à 500 publications publiques et enregistre le catalogue dans Git. La clé est fournie uniquement par le secret GitHub Actions **`YOUTUBE_API_KEY`**, avec accès à YouTube Data API v3. Ne pas la copier dans le HTML, le JavaScript ou un commit.
 
-**Problème** : Affichage incorrect sur mobile
-**Solution** : Vérifier que le viewport meta tag est présent dans le `<head>`
+La planification est `17 */6 * * *` en UTC, soit toutes les six heures ; GitHub peut retarder une exécution. Une synchronisation réussie déclenche ensuite la publication Pages. Le dernier catalogue est conservé si la synchronisation échoue.
 
-## 📞 Support & Contact
+Relance manuelle : **Actions → Synchroniser les vidéos YouTube → Run workflow**.
 
-- **Email** : contact@ltpevangile.com
-- **Téléphone** : +32 (0)2 333 00 33
-- **Adresse** : 1, Stationsstraat - 1601 Ruisbroek, Brussels, Belgium
-- **Réseaux Sociaux** :
-  - [YouTube](https://www.youtube.com/@ltpevangile)
-  - [Facebook](https://www.facebook.com/ltpevangile)
-  - [Instagram](https://www.instagram.com/ltpevangile)
+## Formulaire de contact
 
-## 📄 Licence
+`scripts/contact.json` contient la **clé publique Web3Forms**, conçue pour figurer dans les formulaires HTML. Elle identifie la boîte destinataire ; ce n’est ni un mot de passe de messagerie ni la clé privée YouTube. La variable `LTPE_CONTACT_ACCESS_KEY` peut remplacer sa valeur lors de la génération.
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+Le formulaire transmet le nom, l’e-mail et le message à Web3Forms, avec une notice sur la page. Il limite les doubles envois, ajoute un piège anti-robot et conserve le texte en cas d’échec. La confirmation signifie que le service a accepté le message ; la réception dans la boîte principale doit être vérifiée séparément, y compris les spams.
 
-## 🙏 Remerciements
+Si la clé de configuration est vide, la génération conserve le formulaire de repli qui prépare un e-mail dans la messagerie du visiteur.
 
-- Pasteur Martin Mfuamba et l'équipe de LTPE
-- Tous les contributeurs et supporters
-- La communauté de développeurs web
+## Domaine et référencement
 
-## 🔄 Historique des Versions
+- Domaine principal : **`https://www.ltpe.be/`**.
+- HTTP et le domaine sans `www` redirigent vers le domaine principal HTTPS.
+- `scripts/seo.json` définit l’adresse de référence utilisée pour les URL canoniques, les liens de langue et les aperçus de partage.
+- Sitemap : **<https://www.ltpe.be/sitemap.xml>**.
+- La propriété de domaine `ltpe.be` est validée dans Google Search Console. Conserver son enregistrement TXT DNS de validation.
+- Les contenus traduits et les premières vidéos sont prérendus lors de la génération ; les fonctions interactives sont ensuite prises en charge par JavaScript.
 
-### v1.0.0 (2024-03-30)
-- Lancement initial du site web
-- Pages principales (Accueil, À Propos, Enseignements)
-- Intégration YouTube API
-- Design responsive
+## Vérifications et dépannage
 
----
+`npm test` s’exécute après `npm run build` et couvre les catégories et recherches YouTube, le tri, l’échappement des titres, les pages traduites, les métadonnées, les liens, les ancres, les images, le favicon et la pagination. Il teste aussi le formulaire avec des réponses simulées : acceptation, refus, erreur réseau, réponse invalide, prévention des doubles envois et conservation du texte.
 
-**Dernière mise à jour** : 30 Mars 2024
+Les tests **n’envoient aucun e-mail réel**. Après un changement de service ou de destinataire, effectuer aussi un essai réel et vérifier la réception dans la boîte de l’église.
 
-**Auteur** : Manus AI Assistant & Mike TOBY
+Les pages incluent une politique CSP et une politique de référent ; les actions GitHub sont figées sur des SHA. Ces mesures et les tests ne constituent pas un audit de sécurité ou d’accessibilité exhaustif.
 
-**Pour les développeurs** : N'hésitez pas à forker ce projet et à contribuer !
+| Symptôme                                           | Vérifications                                                                                                    |
+| -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Une modification n’apparaît pas                    | Contrôler le dernier workflow Pages et la source modifiée, puis actualiser sans cache.                           |
+| Une nouvelle image manque                          | Ajouter le fichier à Git, vérifier le chemin et la casse, puis régénérer.                                        |
+| Les vidéos ne sont plus actualisées                | Vérifier la synchronisation, le secret Actions et YouTube Data API v3. Ne pas ajouter la clé dans le navigateur. |
+| Le formulaire signale un échec                     | Vérifier la connexion, la configuration Web3Forms et l’état du service ; le texte reste disponible.              |
+| Le formulaire confirme, mais aucun e-mail n’arrive | Vérifier la boîte associée à la clé Web3Forms et les spams.                                                      |
+| L’icône d’onglet reste ancienne                    | Fermer puis rouvrir l’onglet après une actualisation sans cache.                                                 |
+
+## Contact de l’église
+
+- **Adresse** : Stationsstraat 1, 1601 Ruisbroek, Belgique.
+- **Téléphone** : +32 497 11 82 14.
+- **E-mail** : [letempledupleinevangile@gmail.com](mailto:letempledupleinevangile@gmail.com).
+- **YouTube** : [@ltpevangile](https://www.youtube.com/@ltpevangile).
+- **Instagram** : [@ltpevangile](https://www.instagram.com/ltpevangile).
+
+Les notes de reprise et l’historique détaillé se trouvent dans [REPRISE_PROJET.md](REPRISE_PROJET.md). Certains anciens guides du dépôt décrivent une configuration antérieure ; ce README décrit le fonctionnement actuel.
+
+Dernière mise à jour : **23 novembre 2026**.
